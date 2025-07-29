@@ -1,0 +1,69 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: chapters/intro
+options:
+  numbered: 3
+chapters:
+- file: chapters/10/data-illust
+  title: Data Illustration
+  sections:
+  - file: chapters/10/experiments
+    title: SEC-SAXS Experiments
+  - file: chapters/10/3d-view
+    title: 3D View
+  - file: chapters/10/elutional-view
+    title: Elutional View
+  - file: chapters/10/spectral-view
+    title: Spectral View
+- file: chapters/20/simple-models
+  title: Simple Models
+  sections:
+  - file: chapters/20/gaussian
+    title: Gaussian Curve
+  - file: chapters/20/egh
+    title: Exponential-Gaussian Hybrid
+  - file: chapters/20/homogeneous
+    title: Homogeneous Sphere
+- file: chapters/30/linear-algebra
+  title: Linear Algebra Basics
+  sections:
+  - file: chapters/30/multiplication
+    title: Matrix Multiplication
+  - file: chapters/30/moore-penrose
+    title: Moore-Penrose Inverse
+  - file: chapters/30/matrix-rank
+    title: Matrix Rank
+  - file: chapters/30/svd
+    title: Singular Value Decomposition
+- file: chapters/40/low-rank-factorization
+  title: Low-Rank Factorization
+  sections:
+  - file: chapters/40/degree-of-freedom
+    title: Degree of Freedom
+  - file: chapters/40/underdeterminedness
+    title: Underdeterminedness of EGH Modeling
+- file: chapters/50/saxs-theory
+  title: SAXS Theory
+  sections:
+  - file: chapters/50/fourier
+    title: Fourier Transform
+    title: Guinier Law
+  - file: chapters/50/guinier
+    title: Guinier Law
+  - file: chapters/50/interparticle
+    title: Interparticle Effects
+  - file: chapters/50/bounded-lrf
+    title: Bounded Low-Rank Factorization
+- file: chapters/50/sec-theory
+  title: SEC Theory
+  sections:
+  - file: chapters/60/plate-theory
+    title: Plate Theory
+  - file: chapters/60/stochastic-Theory
+    title: Stochastic Theory
+  - file: chapters/60/kinetic-Theory
+    title: Kinetic Theory
+- file: chapters/90/references
+  title: References
