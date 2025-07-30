@@ -1,3 +1,4 @@
+(elutional_view)=
 # Elutional View
 
 Here are elution curves taken from the same data used above in the 3D view {numref}`three_d_view_of_the_data`. Although they seem similar, be aware that the same set of particles results in diffrent curves in corresponding measurements. The difference varies if you take another pair of picking points in each spectral axis. 

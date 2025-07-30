@@ -24,46 +24,56 @@ chapters:
     title: Gaussian Curve
   - file: chapters/20/egh
     title: Exponential-Gaussian Hybrid
-  - file: chapters/20/homogeneous
-    title: Homogeneous Sphere
+  - file: chapters/20/sphere-scattering
+    title: Homogeneous Sphere Scattering
+  - file: chapters/20/hammouda
+    title: Guinier-Porod Model
+  - file: chapters/20/amino-acid
+    title: Amino Acid Absorbance
 - file: chapters/30/linear-algebra
   title: Linear Algebra Basics
   sections:
   - file: chapters/30/multiplication
     title: Matrix Multiplication
-  - file: chapters/30/moore-penrose
+  - file: chapters/30/mp-inverse
     title: Moore-Penrose Inverse
+  - file: chapters/30/linear-transform
+    title: Linear Transformation
   - file: chapters/30/matrix-rank
     title: Matrix Rank
   - file: chapters/30/svd
     title: Singular Value Decomposition
-- file: chapters/40/low-rank-factorization
+- file: chapters/40/low-rank
   title: Low-Rank Factorization
   sections:
   - file: chapters/40/degree-of-freedom
     title: Degree of Freedom
-  - file: chapters/40/underdeterminedness
+  - file: chapters/40/u14ness
     title: Underdeterminedness of EGH Modeling
+  - file: chapters/40/proportional
+    title: Proportional EGH Modeling
 - file: chapters/50/saxs-theory
   title: SAXS Theory
   sections:
   - file: chapters/50/fourier
-    title: Fourier Transform
+    title: Fourier Transform to the Curve
     title: Guinier Law
   - file: chapters/50/guinier
-    title: Guinier Law
+    title: Guinier Approximation
   - file: chapters/50/interparticle
     title: Interparticle Effects
+  - file: chapters/50/structure
+    title: Structure Factor
   - file: chapters/50/bounded-lrf
     title: Bounded Low-Rank Factorization
-- file: chapters/50/sec-theory
+- file: chapters/60/sec-theory
   title: SEC Theory
   sections:
   - file: chapters/60/plate-theory
     title: Plate Theory
-  - file: chapters/60/stochastic-Theory
+  - file: chapters/60/stochastic-theory
     title: Stochastic Theory
-  - file: chapters/60/kinetic-Theory
+  - file: chapters/60/kinetic-theory
     title: Kinetic Theory
 - file: chapters/90/references
   title: References

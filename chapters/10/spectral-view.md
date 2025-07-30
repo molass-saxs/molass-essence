@@ -30,6 +30,6 @@ To give a theoretical flavor a little, here is an example of simplest case. In S
 SAXS Illustraion through Fourier Transform of a homogeneous Ellipsoid
 ```
 
-We will cover briefly the modeling of scattering curves later in [Chapter 8](chapter_8).
+We will cover briefly the modeling of scattering curves later in [Chapter 5](chapter_5).
 
 [^3]: `Molass Library` currently does not directly utilize this relation, while `DENSS` {cite:p}`Grant:2018` is an excellent application of its smart use, from which we learned coding for the figures.
