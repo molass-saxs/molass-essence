@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -399,7 +399,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="k">def</span> <span class="nf">plot_egh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">molass_legacy.Peaks.ElutionModels</span> <span class="kn">import</span> <span class="n">egh</span>
+    <span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">egh</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">egh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
 
     <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -429,13 +429,27 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/403817b603746a2eb5ce1ec56bdea12d0d74eaad4965a50ea79b0350b4636ebc.png" src="../../_images/403817b603746a2eb5ce1ec56bdea12d0d74eaad4965a50ea79b0350b4636ebc.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plot_egh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">Cell In[1], line 4,</span> in <span class="ni">plot_egh</span><span class="nt">(x, A, mu, sigma, tau)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">plot_egh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">egh</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">egh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;molass.SEC.Models&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_egh_curves</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">molass_legacy.Peaks.ElutionModels</span> <span class="kn">import</span> <span class="n">egh</span><span class="p">,</span> <span class="n">egh_std</span>
+    <span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">egh</span><span class="p">,</span> <span class="n">egh_std</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
         <span class="n">A</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
         <span class="n">mu</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span>

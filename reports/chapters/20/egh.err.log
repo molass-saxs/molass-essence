@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+x = np.arange(300)
+plot_egh(x, A=1.0, mu=150.0, sigma=30.0, tau=0)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[2], line 2[0m
+[0;32m      1[0m x [38;5;241m=[39m np[38;5;241m.[39marange([38;5;241m300[39m)
+[1;32m----> 2[0m [43mplot_egh[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mA[49m[38;5;241;43m=[39;49m[38;5;241;43m1.0[39;49m[43m,[49m[43m [49m[43mmu[49m[38;5;241;43m=[39;49m[38;5;241;43m150.0[39;49m[43m,[49m[43m [49m[43msigma[49m[38;5;241;43m=[39;49m[38;5;241;43m30.0[39;49m[43m,[49m[43m [49m[43mtau[49m[38;5;241;43m=[39;49m[38;5;241;43m0[39;49m[43m)[49m
+
+Cell [1;32mIn[1], line 4[0m, in [0;36mplot_egh[1;34m(x, A, mu, sigma, tau)[0m
+[0;32m      3[0m [38;5;28;01mdef[39;00m [38;5;21mplot_egh[39m(x, A[38;5;241m=[39m[38;5;241m1.0[39m, mu[38;5;241m=[39m[38;5;241m0.0[39m, sigma[38;5;241m=[39m[38;5;241m1.0[39m, tau[38;5;241m=[39m[38;5;241m1.0[39m):
+[1;32m----> 4[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mmolass[39;00m[38;5;21;01m.[39;00m[38;5;21;01mSEC[39;00m[38;5;21;01m.[39;00m[38;5;21;01mModels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mSimple[39;00m [38;5;28;01mimport[39;00m egh
+[0;32m      5[0m     y [38;5;241m=[39m egh(x, A, mu, sigma, tau)
+[0;32m      7[0m     w [38;5;241m=[39m np[38;5;241m.[39msum(y)
+
+[1;31mModuleNotFoundError[0m: No module named 'molass.SEC.Models'
+
