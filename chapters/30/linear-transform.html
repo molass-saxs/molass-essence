@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/30/linear-transform';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -365,7 +367,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -381,6 +385,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concept">3.3.1. Basic Concept</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-ponrose-inverse">3.3.2. Moore-Ponrose Inverse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#singular-value-decomposition">3.3.3. Singular Value Decomposition</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -392,6 +406,25 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linear-transformation">
 <h1><span class="section-number">3.3. </span>Linear Transformation<a class="headerlink" href="#linear-transformation" title="Link to this heading">#</a></h1>
+<p>Matrix multiplication maps any vector to another vector. Therefore it maps a shape to another shape in the vector space. In this sense a matrix correspond to a transformation, which is called a linear transformation. In this chapter, we will explore some examples in the hope that it will be helpful for the understanding of linear algebra basics.</p>
+<section id="basic-concept">
+<h2><span class="section-number">3.3.1. </span>Basic Concept<a class="headerlink" href="#basic-concept" title="Link to this heading">#</a></h2>
+<p>Linear transformation perspective is an easy way to get intuitive ideas about some of the concepts in linear algebra. The following animation shows an example in 2D space. It can be defined to be a transformation which transforms a square to a parallelogram.</p>
+<video width="100%" controls autoplay>
+<source src="../../_static/animations/linear-transfomation.mp4" type="video/mp4">
+</video></section>
+<section id="moore-ponrose-inverse">
+<h2><span class="section-number">3.3.2. </span>Moore-Ponrose Inverse<a class="headerlink" href="#moore-ponrose-inverse" title="Link to this heading">#</a></h2>
+<p>In this perspective, Moore-Penrose inverse is an inverse transformation shown below. This animation first shows a 2D to 3D transformation starting from a 2D square in the left pane. And on the completion in the left, then its inverse transformation from 3D to 2D is shown in the right pane starting from a 3D cube.</p>
+<video width="100%" controls autoplay>
+<source src="../../_static/animations/moore-penrose-inverse.mp4" type="video/mp4">
+</video></section>
+<section id="singular-value-decomposition">
+<h2><span class="section-number">3.3.3. </span>Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Link to this heading">#</a></h2>
+<p>Singular value decomposition <span class="math notranslate nohighlight">\( M = U \cdot \Sigma \cdot V^* \)</span> below is another one which is made easy to understand with linear transformation. It should be clear in this animation how the decomposed matrices correspond to a rotation, a pair of scaling in the direction of axes (or a rectangular transformation) and another rotation.</p>
+<video width="100%" controls autoplay>
+<source src="../../_static/animations/SVD-animation.mp4" type="video/mp4">
+</video></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -448,6 +481,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concept">3.3.1. Basic Concept</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moore-ponrose-inverse">3.3.2. Moore-Ponrose Inverse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#singular-value-decomposition">3.3.3. Singular Value Decomposition</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
