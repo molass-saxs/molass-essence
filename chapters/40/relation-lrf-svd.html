@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.3. Interparticle Effects &#8212; Molass Library Essense</title>
+    <title>4.1. Relation between LRF and SVD &#8212; Molass Library Essense</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/50/interparticle';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/relation-lrf-svd';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.4. Structure Factor" href="structure.html" />
-    <link rel="prev" title="5.2. Guinier Approximation" href="guinier.html" />
+    <link rel="next" title="4.2. Degree of Freedom" href="degree-of-freedom.html" />
+    <link rel="prev" title="4. Linear Algebra Basics" href="low-rank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,19 +204,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../30/svd.html">3.5. Singular Value Decomposition</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low-Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.1. Relation between Low-Rank Factorization and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.2. Degree of Freedom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.4. Proportional EGH Modeling</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low-Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. Relation between Low-Rank Factorization and SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="degree-of-freedom.html">4.2. Degree of Freedom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proportional.html">4.4. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="saxs-theory.html">5. SAXS Theory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="fourier.html">5.1. Guinier Law</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guinier.html">5.2. Guinier Approximation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Interparticle Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../50/fourier.html">5.1. Guinier Law</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -295,7 +295,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/50/interparticle.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/40/relation-lrf-svd.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Interparticle Effects</h1>
+    <h1>Relation between LRF and SVD</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,8 +391,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="interparticle-effects">
-<span id="id1"></span><h1><span class="section-number">5.3. </span>Interparticle Effects<a class="headerlink" href="#interparticle-effects" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="relation-between-lrf-and-svd">
+<h1><span class="section-number">4.1. </span>Relation between LRF and SVD<a class="headerlink" href="#relation-between-lrf-and-svd" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -408,7 +408,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters\50"
+            path: "./chapters\40"
         },
         predefinedOutput: true
     }
@@ -426,20 +426,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="guinier.html"
+       href="low-rank.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.2. </span>Guinier Approximation</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Linear Algebra Basics</p>
       </div>
     </a>
     <a class="right-next"
-       href="structure.html"
+       href="degree-of-freedom.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>Structure Factor</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Degree of Freedom</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

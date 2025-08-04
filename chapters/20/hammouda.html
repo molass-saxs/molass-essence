@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -205,9 +205,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low-Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.1. Degree of Freedom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.2. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.3. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.1. Relation between Low-Rank Factorization and SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.2. Degree of Freedom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.4. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -416,6 +417,33 @@ document.write(`
         <span class="k">return</span> <span class="n">w</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Rg</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">I</span><span class="p">,</span> <span class="n">q1</span> <span class="o">=</span> <span class="n">guinier_porod</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">Rg</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">return_also_q1</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">yscale</span> <span class="ow">in</span> <span class="p">((</span><span class="n">ax1</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;q (1/Angstrom)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scattering Curve (</span><span class="si">{</span><span class="n">yscale</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">I</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Guinier-Porod Boundary&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/be3d1974a35d89494db9dc55849448537a7b4af11be4ea4d0bfdb7bd86562dc7.png" src="../../_images/be3d1974a35d89494db9dc55849448537a7b4af11be4ea4d0bfdb7bd86562dc7.png" />
 </div>
 </div>
 </section>
