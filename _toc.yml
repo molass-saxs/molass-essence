@@ -40,12 +40,14 @@ chapters:
   - file: chapters/30/linear-transform
     title: Linear Transformation
   - file: chapters/30/matrix-rank
-    title: Matrix Rank
+    title: Low-Rank Assumptions
   - file: chapters/30/svd
     title: Singular Value Decomposition
 - file: chapters/40/low-rank
   title: Low-Rank Factorization
   sections:
+  - file: chapters/40/relation-lrf-svd
+    title: Relation between LRF and SVD
   - file: chapters/40/degree-of-freedom
     title: Degree of Freedom
   - file: chapters/40/u14ness
@@ -56,8 +58,7 @@ chapters:
   title: SAXS Theory
   sections:
   - file: chapters/50/fourier
-    title: Fourier Transform to the Curve
-    title: Guinier Law
+    title: Fourier Transform - from Density to Scattering
   - file: chapters/50/guinier
     title: Guinier Approximation
   - file: chapters/50/interparticle
