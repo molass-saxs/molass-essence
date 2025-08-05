@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -391,8 +391,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-component">3.2.1. Single Component</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-components">Multiple Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">Case of Multiple Components</a></li>
 </ul>
 </li>
 </ul>
@@ -435,8 +435,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(12 = 2\sqrt{3} \cdot 2\sqrt{3} \)</span></p></li>
 <li><p>or whatever</p></li>
 </ul>
-<p>In other words, be aware that the Moore-Penrose inserse just gives the unique paired reciprocal when the other is given, but it says nothing which constraints the factorization.</p>
-<p>In this chapter, we will confirm that the Moore-Penrose inverses serve the role of reciprocal numbers.</p>
+<p>In other words, be aware that the Moore-Penrose inverse just gives the unique paired reciprocal when the other factor is given, however, the factorization is arbitrary if no counterpart is given.</p>
+<p>In this chapter, we will confirm that the Moore-Penrose inverse plays, for matrices, a role analogous to that of the reciprocal for scalars.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -447,8 +447,10 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="single-component">
-<h2><span class="section-number">3.2.1. </span>Single Component<a class="headerlink" href="#single-component" title="Link to this heading">#</a></h2>
+<section id="case-of-single-component">
+<h2><span class="section-number">3.2.1. </span>Case of Single Component<a class="headerlink" href="#case-of-single-component" title="Link to this heading">#</a></h2>
+<p>First, let us take a look at a case where only a single component is involved.</p>
+<p>We can observe that the inverse shows a perfect fit to the original for the data without noise. Compare the fit to that for the noisy data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
@@ -507,11 +509,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7857284c9cd2c38e73af32a95db9c679e74d76ff59e1721ca1a366515f1cf19b.png" src="../../_images/7857284c9cd2c38e73af32a95db9c679e74d76ff59e1721ca1a366515f1cf19b.png" />
+<img alt="../../_images/052bf38b97605a99eaabaddfaea4533a923494ac0adaff1e460192676d4804c2.png" src="../../_images/052bf38b97605a99eaabaddfaea4533a923494ac0adaff1e460192676d4804c2.png" />
 </div>
 </div>
-<section id="multiple-components">
-<h3>Multiple Components<a class="headerlink" href="#multiple-components" title="Link to this heading">#</a></h3>
+<section id="case-of-multiple-components">
+<h3>Case of Multiple Components<a class="headerlink" href="#case-of-multiple-components" title="Link to this heading">#</a></h3>
+<p>The inverse also works in cases where multiple components are involved, although the effect of noise becomes more pronounced at the same noise level.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_multiple_component_data</span><span class="p">(</span><span class="n">scattering_params</span><span class="p">,</span> <span class="n">elution_params</span><span class="p">,</span> <span class="n">use_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -600,7 +603,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/52e419e0eb8635169b0be156a524ecd0ae7612f0d4c6a61ed7046a44e261c072.png" src="../../_images/52e419e0eb8635169b0be156a524ecd0ae7612f0d4c6a61ed7046a44e261c072.png" />
+<img alt="../../_images/b136217756c0cd75b92080dc4156e24ac6a68af9e62f33a1266acfe466fa9ddc.png" src="../../_images/b136217756c0cd75b92080dc4156e24ac6a68af9e62f33a1266acfe466fa9ddc.png" />
 </div>
 </div>
 </section>
@@ -671,8 +674,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-component">3.2.1. Single Component</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-components">Multiple Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">Case of Multiple Components</a></li>
 </ul>
 </li>
 </ul>
