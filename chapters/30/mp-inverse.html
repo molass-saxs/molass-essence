@@ -202,11 +202,12 @@
 <li class="toctree-l2"><a class="reference internal" href="multiplication.html">3.1. Matrix Multiplication</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Moore-Penrose Inverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-transform.html">3.3. Linear Transformation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">3.4. Low-Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="svd.html">3.5. Singular Value Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">3.4. Low Rank Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svd-denoise.html">3.5. Noise Reduction with SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependent-factor.html">3.6. Dependent Factor Issue</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low-Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.2. Degree of Freedom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
@@ -391,10 +392,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">Case of Multiple Components</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">3.2.2. Case of Multiple Components</a></li>
 </ul>
             </nav>
         </div>
@@ -408,7 +407,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="moore-penrose-inverse">
 <h1><span class="section-number">3.2. </span>Moore-Penrose Inverse<a class="headerlink" href="#moore-penrose-inverse" title="Link to this heading">#</a></h1>
-<p>In the previous chapter, we have confirmed the matrix formula <span class="math notranslate nohighlight">\( M = P \cdot C \)</span> which can be stated in natural language that a SEC-SAXS dataset can be expressed as the product of a set of spectral curves and a set of elutional curves. If it was about multiplication, how about division? The answer can be <code class="docutils literal notranslate"><span class="pre">conceptually</span></code> expressed using the Moore-Penrose inverse as follows.</p>
+<p>In the previous section, we have confirmed the matrix formula <span class="math notranslate nohighlight">\( M = P \cdot C \)</span> which can be stated in natural language that a SEC-SAXS dataset can be expressed as the product of a set of spectral curves and a set of elutional curves. If it was about multiplication, how about division? The answer can be <code class="docutils literal notranslate"><span class="pre">conceptually</span></code> expressed using the Moore-Penrose inverse as follows.</p>
 <div class="math notranslate nohighlight">
 \[ P = M \cdot C^{+} \qquad \qquad (2a) \]</div>
 <div class="math notranslate nohighlight">
@@ -462,7 +461,7 @@ document.write(`
     <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
     <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
     <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-    
+
     <span class="n">w</span><span class="p">,</span> <span class="n">q1</span> <span class="o">=</span> <span class="n">guinier_porod</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">Rg</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">return_also_q1</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="c1"># ax1.set_yscale(&#39;log&#39;)</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Scattering Curve: P&quot;</span><span class="p">)</span>
@@ -509,11 +508,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/052bf38b97605a99eaabaddfaea4533a923494ac0adaff1e460192676d4804c2.png" src="../../_images/052bf38b97605a99eaabaddfaea4533a923494ac0adaff1e460192676d4804c2.png" />
+<img alt="../../_images/e7fc4d5cf26c115b93ae5b46d389c7abbceb282c733004a801b36671bceb9a32.png" src="../../_images/e7fc4d5cf26c115b93ae5b46d389c7abbceb282c733004a801b36671bceb9a32.png" />
 </div>
 </div>
+</section>
 <section id="case-of-multiple-components">
-<h3>Case of Multiple Components<a class="headerlink" href="#case-of-multiple-components" title="Link to this heading">#</a></h3>
+<h2><span class="section-number">3.2.2. </span>Case of Multiple Components<a class="headerlink" href="#case-of-multiple-components" title="Link to this heading">#</a></h2>
 <p>The inverse also works in cases where multiple components are involved, although the effect of noise becomes more pronounced at the same noise level.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,10 +603,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b136217756c0cd75b92080dc4156e24ac6a68af9e62f33a1266acfe466fa9ddc.png" src="../../_images/b136217756c0cd75b92080dc4156e24ac6a68af9e62f33a1266acfe466fa9ddc.png" />
+<img alt="../../_images/54235fe66137d45d3bcc97de7b79fd812213bc2bf526338e4f7d25a5755d52e0.png" src="../../_images/54235fe66137d45d3bcc97de7b79fd812213bc2bf526338e4f7d25a5755d52e0.png" />
 </div>
 </div>
-</section>
 </section>
 </section>
 
@@ -674,10 +673,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">Case of Multiple Components</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">3.2.2. Case of Multiple Components</a></li>
 </ul>
   </nav></div>
 

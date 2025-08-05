@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.4. Low-Rank Assumptions &#8212; Molass Library Essense</title>
+    <title>3.4. Low Rank Assumptions &#8212; Molass Library Essense</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.5. Singular Value Decomposition" href="svd.html" />
+    <link rel="next" title="3.5. Noise Reduction with SVD" href="svd-denoise.html" />
     <link rel="prev" title="3.3. Linear Transformation" href="linear-transform.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -202,11 +202,12 @@
 <li class="toctree-l2"><a class="reference internal" href="multiplication.html">3.1. Matrix Multiplication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mp-inverse.html">3.2. Moore-Penrose Inverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-transform.html">3.3. Linear Transformation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Low-Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="svd.html">3.5. Singular Value Decomposition</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Low Rank Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svd-denoise.html">3.5. Noise Reduction with SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependent-factor.html">3.6. Dependent Factor Issue</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low-Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.2. Degree of Freedom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
@@ -381,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Low-Rank Assumptions</h1>
+    <h1>Low Rank Assumptions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,7 +406,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="low-rank-assumptions">
-<h1><span class="section-number">3.4. </span>Low-Rank Assumptions<a class="headerlink" href="#low-rank-assumptions" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.4. </span>Low Rank Assumptions<a class="headerlink" href="#low-rank-assumptions" title="Link to this heading">#</a></h1>
 <p>In this section, we summarize the assumptions we usually use, some of which are mathematically trivial (or self-evident), or found to be computationally fundamental from our experince. These will be refered to as our <code class="docutils literal notranslate"><span class="pre">&quot;low-rank</span> <span class="pre">assumptions&quot;</span></code>.</p>
 <section id="basic-rules">
 <h2><span class="section-number">3.4.1. </span>Basic Rules<a class="headerlink" href="#basic-rules" title="Link to this heading">#</a></h2>
@@ -491,11 +492,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="svd.html"
+       href="svd-denoise.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Singular Value Decomposition</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Noise Reduction with SVD</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

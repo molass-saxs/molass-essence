@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Linear Algebra Basics &#8212; Molass Library Essense</title>
+    <title>4. Low Rank Factorization &#8212; Molass Library Essense</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.1. Relation between LRF and SVD" href="relation-lrf-svd.html" />
-    <link rel="prev" title="3.5. Singular Value Decomposition" href="../30/svd.html" />
+    <link rel="prev" title="3.6. Dependent Factor Issue" href="../30/dependent-factor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,11 +200,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../30/multiplication.html">3.1. Matrix Multiplication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../30/mp-inverse.html">3.2. Moore-Penrose Inverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../30/linear-transform.html">3.3. Linear Transformation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../30/matrix-rank.html">3.4. Low-Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../30/svd.html">3.5. Singular Value Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30/matrix-rank.html">3.4. Low Rank Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30/svd-denoise.html">3.5. Noise Reduction with SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../30/dependent-factor.html">3.6. Dependent Factor Issue</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Low-Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="degree-of-freedom.html">4.2. Degree of Freedom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
@@ -377,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linear Algebra Basics</h1>
+    <h1>Low Rank Factorization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,8 +392,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-basics">
-<h1><span class="section-number">4. </span>Linear Algebra Basics<a class="headerlink" href="#linear-algebra-basics" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="low-rank-factorization">
+<h1><span class="section-number">4. </span>Low Rank Factorization<a class="headerlink" href="#low-rank-factorization" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -428,12 +429,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../30/svd.html"
+       href="../30/dependent-factor.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Singular Value Decomposition</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Dependent Factor Issue</p>
       </div>
     </a>
     <a class="right-next"
