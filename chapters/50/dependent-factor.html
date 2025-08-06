@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.5. Amino Acid Absorbance &#8212; Molass Library Essense</title>
+    <title>5.5. Dependent Factor Issue &#8212; Molass Library Essense</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,12 +57,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/20/amino-acid';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/50/dependent-factor';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Linear Algebra Basics" href="../30/linear-algebra.html" />
-    <link rel="prev" title="2.4. Guinier-Porod Model" href="hammouda.html" />
+    <link rel="next" title="5.6. Guinier Approximation" href="bounded-lrf.html" />
+    <link rel="prev" title="5.4. Structure Factor" href="structure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,12 +188,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../10/spectral-view.html">1.4. Spectral View</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="simple-models.html">2. Simple Models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gaussian.html">2.1. Gaussian Curve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="egh.html">2.2. Exponential-Gaussian Hybrid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphere-scattering.html">2.3. Homogeneous Sphere Scattering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hammouda.html">2.4. Guinier-Porod Model</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Amino Acid Absorbance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../20/simple-models.html">2. Simple Models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../20/gaussian.html">2.1. Gaussian Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20/egh.html">2.2. Exponential-Gaussian Hybrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20/sphere-scattering.html">2.3. Homogeneous Sphere Scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20/hammouda.html">2.4. Guinier-Porod Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20/amino-acid.html">2.5. Amino Acid Absorbance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../30/linear-algebra.html">3. Linear Algebra Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -211,12 +211,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../50/fourier.html">5.1. Fourier Transform - from Density to Scattering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="saxs-theory.html">5. SAXS Theory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fourier.html">5.1. Fourier Transform - from Density to Scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guinier.html">5.2. Guinier Approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interparticle.html">5.3. Interparticle Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">5.4. Structure Factor</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.5. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -295,7 +296,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/20/amino-acid.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/50/dependent-factor.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Amino Acid Absorbance</h1>
+    <h1>Dependent Factor Issue</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,13 +392,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="amino-acid-absorbance">
-<h1><span class="section-number">2.5. </span>Amino Acid Absorbance<a class="headerlink" href="#amino-acid-absorbance" title="Link to this heading">#</a></h1>
-<p>There exists no simple model for UV absorbance spectra.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section is planned.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="dependent-factor-issue">
+<h1><span class="section-number">5.5. </span>Dependent Factor Issue<a class="headerlink" href="#dependent-factor-issue" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -413,7 +409,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters\20"
+            path: "./chapters\50"
         },
         predefinedOutput: true
     }
@@ -431,20 +427,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="hammouda.html"
+       href="structure.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Guinier-Porod Model</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Structure Factor</p>
       </div>
     </a>
     <a class="right-next"
-       href="../30/linear-algebra.html"
+       href="bounded-lrf.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Linear Algebra Basics</p>
+        <p class="prev-next-title"><span class="section-number">5.6. </span>Guinier Approximation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -207,12 +207,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="40/low-rank.html">4. Low Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="40/matrix-rank.html">4.1. Low Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="40/dependent-factor.html">4.2. Dependent Factor Issue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="40/relation-lrf-svd.html">4.3. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="40/degree-of-freedom.html">4.4. Degree of Freedom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="40/u14ness.html">4.5. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="40/proportional.html">4.6. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/matrix-rank.html">4.2. Low Rank Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/degree-of-freedom.html">4.3. Degree of Freedom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/u14ness.html">4.4. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -220,7 +219,8 @@
 <li class="toctree-l2"><a class="reference internal" href="50/guinier.html">5.2. Guinier Approximation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="50/interparticle.html">5.3. Interparticle Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -402,7 +402,8 @@ document.write(`
 <p>This book is scheduled to be publicly available in September, 2025.</p>
 </div>
 <p>Molass Library is a rewrite of <a class="reference external" href="https://www.jstage.jst.go.jp/article/biophysico/20/1/20_e200001/_article">MOLASS</a> which is an analytical tool for SEC-SAXS experiment data currently hosted at <a class="reference external" href="https://pfwww.kek.jp/saxs/MOLASS.html">Photon Factory</a>, Japan. It is designed for scripting in Jupyter notebooks, thereby attaining greater flexibility compared to the predecessor thanks to the Python ecosystem diversity.</p>
-<p>This document describes the theoretical essence of the library. You can read the chapters of the left sidebar in order. Otherwise, glance over the contents or use the search box to find what you are interested in.</p>
+<p>This document describes the theoretical essence of the library, meaning that we will provide brief entries on each key point rather than exploring every subject in depth. Many topics are still under investigation, and it is more important to enable readers to easily engage with them and experiment on their own than to present our elaborate but not yet fully established results.</p>
+<p>You can read the chapters of the left sidebar in order. Otherwise, glance over the contents or use the search box to find what you are interested in.</p>
 <p>See also as you proceed:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://nshimizu0721.github.io/molass-tutorial/">Molass Library Tutorial</a> for how to use,</p></li>
