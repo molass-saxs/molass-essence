@@ -25,7 +25,7 @@ chapters:
   - file: chapters/20/egh
     title: Exponential-Gaussian Hybrid
   - file: chapters/20/sphere-scattering
-    title: Homogeneous Sphere Scattering
+    title: Sphere Scattering
   - file: chapters/20/hammouda
     title: Guinier-Porod Model
   - file: chapters/20/amino-acid
@@ -39,17 +39,15 @@ chapters:
     title: Moore-Penrose Inverse
   - file: chapters/30/linear-transform
     title: Linear Transformation
-  - file: chapters/30/matrix-rank
-    title: Low Rank Assumptions
   - file: chapters/30/svd-denoise
     title: Noise Reduction with SVD
-  - file: chapters/30/dependent-factor
-    title: Dependent Factor Issue
 - file: chapters/40/low-rank
   title: Low Rank Factorization
   sections:
   - file: chapters/40/relation-lrf-svd
     title: Relation between LRF and SVD
+  - file: chapters/40/matrix-rank
+    title: Low Rank Assumptions
   - file: chapters/40/degree-of-freedom
     title: Degree of Freedom
   - file: chapters/40/u14ness
@@ -67,6 +65,8 @@ chapters:
     title: Interparticle Effects
   - file: chapters/50/structure
     title: Structure Factor
+  - file: chapters/50/dependent-factor
+    title: Dependent Factor Issue
   - file: chapters/50/bounded-lrf
     title: Bounded Low-Rank Factorization
 - file: chapters/60/sec-theory
