@@ -202,16 +202,16 @@
 <li class="toctree-l2"><a class="reference internal" href="multiplication.html">3.1. Matrix Multiplication</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Moore-Penrose Inverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-transform.html">3.3. Linear Transformation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">3.4. Low Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="svd-denoise.html">3.5. Noise Reduction with SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dependent-factor.html">3.6. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svd-denoise.html">3.4. Noise Reduction with SVD</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.2. Degree of Freedom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.3. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.4. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/matrix-rank.html">4.1. Low Rank Assumptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/dependent-factor.html">4.2. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.3. Relation between LRF and SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/degree-of-freedom.html">4.4. Degree of Freedom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/u14ness.html">4.5. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.6. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -436,23 +436,18 @@ document.write(`
 </ul>
 <p>In other words, be aware that the Moore-Penrose inverse just gives the unique paired reciprocal when the other factor is given, however, the factorization is arbitrary if no counterpart is given.</p>
 <p>In this chapter, we will confirm that the Moore-Penrose inverse plays, for matrices, a role analogous to that of the reciprocal for scalars.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">molass.SAXS.Models.Simple</span> <span class="kn">import</span> <span class="n">guinier_porod</span>
-<span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">gaussian</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="case-of-single-component">
 <h2><span class="section-number">3.2.1. </span>Case of Single Component<a class="headerlink" href="#case-of-single-component" title="Link to this heading">#</a></h2>
 <p>First, let us take a look at a case where only a single component is involved.</p>
 <p>We can observe that the inverse shows a perfect fit to the original for the data without noise. Compare the fit to that for the noisy data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">molass.SAXS.Models.Simple</span> <span class="kn">import</span> <span class="n">guinier_porod</span>
+<span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">gaussian</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">plot_single_component_data</span><span class="p">(</span><span class="n">scatter_params</span><span class="p">,</span> <span class="n">elution_params</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">G</span><span class="p">,</span> <span class="n">Rg</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">scatter_params</span>
@@ -508,7 +503,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e7fc4d5cf26c115b93ae5b46d389c7abbceb282c733004a801b36671bceb9a32.png" src="../../_images/e7fc4d5cf26c115b93ae5b46d389c7abbceb282c733004a801b36671bceb9a32.png" />
+<img alt="../../_images/4b56f719c1f37037ffe8c039c4949f124592247a8c380bf61f5e722c290e6188.png" src="../../_images/4b56f719c1f37037ffe8c039c4949f124592247a8c380bf61f5e722c290e6188.png" />
 </div>
 </div>
 </section>
@@ -603,7 +598,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/54235fe66137d45d3bcc97de7b79fd812213bc2bf526338e4f7d25a5755d52e0.png" src="../../_images/54235fe66137d45d3bcc97de7b79fd812213bc2bf526338e4f7d25a5755d52e0.png" />
+<img alt="../../_images/73f54476ab75c004967ebd78a049e7e775306cc85f1ae353e0b44c5f793d28bd.png" src="../../_images/73f54476ab75c004967ebd78a049e7e775306cc85f1ae353e0b44c5f793d28bd.png" />
 </div>
 </div>
 </section>
