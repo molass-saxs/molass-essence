@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.3. Homogeneous Sphere Scattering &#8212; Molass Library Essense</title>
+    <title>2.3. Sphere Scattering &#8212; Molass Library Essense</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -218,7 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -379,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Homogeneous Sphere Scattering</h1>
+    <h1>Sphere Scattering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,8 +394,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-sphere-scattering">
-<h1><span class="section-number">2.3. </span>Homogeneous Sphere Scattering<a class="headerlink" href="#homogeneous-sphere-scattering" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sphere-scattering">
+<h1><span class="section-number">2.3. </span>Sphere Scattering<a class="headerlink" href="#sphere-scattering" title="Link to this heading">#</a></h1>
 <p>Following <span id="id1">[<a class="reference internal" href="../90/references.html#id25" title="Jan Skov Pedersen. Analysis of small-angle scattering data from colloids and polymer solutions: modeling and least-squares fitting. Advances in Colloid and Interface Science, 70:171-210, 1997. URL: https://www.sciencedirect.com/science/article/pii/S0001868697003126, doi:https://doi.org/10.1016/S0001-8686(97)00312-6.">Ped97</a>]</span>, we will glance over the model.</p>
 <div class="math notranslate nohighlight">
 \[ F_1(q,R) = \frac{3[\sin(q R) - q R \cos(q R)]}{(q R)^3} \]</div>

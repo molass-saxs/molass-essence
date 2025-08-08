@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -218,7 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -411,10 +412,15 @@ document.write(`
 \[M = P \cdot C \qquad \qquad (1) \]</div>
 <p>where</p>
 <ul class="simple">
-<li><p>M: measured data</p></li>
-<li><p>P: spectral curves</p></li>
-<li><p>C: elutional curves</p></li>
+<li><p><span class="math notranslate nohighlight">\( M \)</span> : measured data</p></li>
+<li><p><span class="math notranslate nohighlight">\( P \)</span> : spectral curves</p></li>
+<li><p><span class="math notranslate nohighlight">\( C \)</span> : elutional curves</p></li>
+<li><p><span class="math notranslate nohighlight">\( P \cdot C \)</span> : matrix multiplication</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We refer to the curves related to elution as ‘elutional curves’ for contrast with ‘spectral curves.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
