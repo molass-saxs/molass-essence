@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -218,7 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -433,12 +434,12 @@ document.write(`
 </section>
 <section id="interparticle-effects-simplification">
 <h2><span class="section-number">4.2.2. </span>Interparticle Effects Simplification<a class="headerlink" href="#interparticle-effects-simplification" title="Link to this heading">#</a></h2>
-<p>It is also known that precisely modeling interpaticle effects are not easy. Therefore, we simply assume that they can be modeled for any single species (component) as follows.</p>
+<p>It is also known that precisely modeling interpaticle effects are not easy.<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Therefore, we simply assume that they can be modeled for any single species (component) as follows.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(M = [p_1, p_2] \cdot [c, c^2]^T \)</span> for small angle regions if the interparticle effects are not ignorable.</p></li>
 <li><p>rank(<span class="math notranslate nohighlight">\(M\)</span>) is 2 in this case</p></li>
 </ul>
-<p>In other words, the stance of Molass Library is not to investigate further on interpaticle effects, but to find a nearest feasible solution based on this quadratic assumption. Generally,</p>
+<p>In other words, our stance in Molass Library is not to investigate interparticle effects in greater detail, but rather to find the nearest feasible solution based on this quadratic assumption. From a practical point of view, it is better to make it easy to use this simple approximation than to do nothing out of concern for precision. Generally,</p>
 <ul class="simple">
 <li><p>rank(<span class="math notranslate nohighlight">\(M\)</span>) is  k + l</p></li>
 </ul>
@@ -448,6 +449,13 @@ document.write(`
 <li><p>l: number of components for which interparticle effects are not ignorable</p></li>
 </ul>
 <p>We will discuss more on this later in <a class="reference internal" href="../50/interparticle.html#interparticle-effects"><span class="std std-ref">Interparticle Effects</span></a>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This fact was expressed as “the interference effects are unlikey to be treated rigorously, …” on page 36 in <span id="id3">[<a class="reference internal" href="../90/references.html#id27" title="L.A. Feigin and D.I. Svergun. Structure Analysis by Small-Angle X-Ray and Neutron Scattering. Springer US, 1987. ISBN 9780306426292. URL: https://books.google.co.jp/books?id=q0iqQgAACAAJ.">FS87</a>]</span>. And the situation around this problem does not seem to have changed since.</p>
+</aside>
+</aside>
 </section>
 </section>
 
