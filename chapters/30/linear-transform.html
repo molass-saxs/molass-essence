@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -218,7 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.5. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -422,13 +423,13 @@ document.write(`
 <source src="../../_static/animations/moore-penrose-inverse.mp4" type="video/mp4">
 </video></section>
 <section id="singular-value-decomposition">
-<h2><span class="section-number">3.3.3. </span>Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Link to this heading">#</a></h2>
+<span id="svd-animation"></span><h2><span class="section-number">3.3.3. </span>Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Link to this heading">#</a></h2>
 <p>Singular value decomposition <span class="math notranslate nohighlight">\( M = U \cdot \Sigma \cdot V^* \)</span> below is another one which is made easy to understand with linear transformation perspective. It should be clear in this animation how the decomposed matrices correspond to a rotation, a pair of scaling in the direction of axes (or a rectangular transformation) and another rotation.</p>
 <video width="100%" controls autoplay>
 <source src="../../_static/animations/SVD-animation.mp4" type="video/mp4">
 </video></section>
 <section id="caveat-no-one-to-one-correspondence">
-<h2><span class="section-number">3.3.4. </span>Caveat: No One-to-One Correspondence<a class="headerlink" href="#caveat-no-one-to-one-correspondence" title="Link to this heading">#</a></h2>
+<span id="svd-caveat"></span><h2><span class="section-number">3.3.4. </span>Caveat: No One-to-One Correspondence<a class="headerlink" href="#caveat-no-one-to-one-correspondence" title="Link to this heading">#</a></h2>
 <p>With regard to SVD, it is important to realize that the singular values (or scale factors) do not directly correspond one-to-one to the component species in the real world. Let us confirm this assertion with the following example. Although it uses artificial values, it reflects what is generally observed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -421,16 +421,6 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>We refer to the curves related to elution as ‘elutional curves’ for contrast with ‘spectral curves.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">molass.SAXS.Models.Simple</span> <span class="kn">import</span> <span class="n">guinier_porod</span>
-<span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">gaussian</span>
-</pre></div>
-</div>
-</div>
-</div>
 <section id="case-of-single-component">
 <h2><span class="section-number">3.1.1. </span>Case of Single Component<a class="headerlink" href="#case-of-single-component" title="Link to this heading">#</a></h2>
 <p>For a case with a single component, confirm the following points.</p>
@@ -440,8 +430,14 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">molass.SAXS.Models.Simple</span> <span class="kn">import</span> <span class="n">guinier_porod</span>
+<span class="kn">from</span> <span class="nn">molass.SEC.Models.Simple</span> <span class="kn">import</span> <span class="n">gaussian</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
 <span class="k">def</span> <span class="nf">plot_single_component_data</span><span class="p">(</span><span class="n">scatter_params</span><span class="p">,</span> <span class="n">elution_params</span><span class="p">):</span>
     <span class="n">G</span><span class="p">,</span> <span class="n">Rg</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">scatter_params</span>
     <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">elution_params</span>
