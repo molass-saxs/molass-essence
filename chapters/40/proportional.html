@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -191,7 +191,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../20/simple-models.html">2. Simple Models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../20/gaussian.html">2.1. Gaussian Curve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../20/egh.html">2.2. Exponential-Gaussian Hybrid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../20/sphere-scattering.html">2.3. Homogeneous Sphere Scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../20/sphere-scattering.html">2.3. Sphere Scattering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../20/hammouda.html">2.4. Guinier-Porod Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../20/amino-acid.html">2.5. Amino Acid Absorbance</a></li>
 </ul>
@@ -206,7 +206,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.2. Low Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="degree-of-freedom.html">4.3. Degree of Freedom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="degrees-of-freedom.html">4.3. Degrees of Freedom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="u14ness.html">4.4. Underdeterminedness of EGH Modeling</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.5. Proportional EGH Modeling</a></li>
 </ul>
@@ -394,6 +394,67 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="proportional-egh-modeling">
 <h1><span class="section-number">4.5. </span>Proportional EGH Modeling<a class="headerlink" href="#proportional-egh-modeling" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.4.0 or higher.&quot;</span>
+<span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE1</span>
+<span class="kn">from</span> <span class="nn">molass.DataObjects</span> <span class="kn">import</span> <span class="n">SecSaxsData</span> <span class="k">as</span> <span class="n">SSD</span>
+<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE1</span><span class="p">)</span>
+<span class="n">trimmed_ssd</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
+<span class="n">corrected_ssd</span> <span class="o">=</span> <span class="n">trimmed_ssd</span><span class="o">.</span><span class="n">corrected_copy</span><span class="p">()</span>
+<span class="n">decomposition</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeros at the angular ends of error data have been replaced with the adjacent values.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proportions</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">get_proportions</span><span class="p">()</span>
+<span class="n">proportions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.39450525, 0.12825418, 0.47724056])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified_decomposition</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">proportions</span><span class="o">=</span><span class="p">[</span><span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">reload</span>
+<span class="kn">import</span> <span class="nn">molass.PlotUtils.Comparison</span>
+<span class="n">reload</span><span class="p">(</span><span class="n">molass</span><span class="o">.</span><span class="n">PlotUtils</span><span class="o">.</span><span class="n">Comparison</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">molass.PlotUtils.Comparison</span> <span class="kn">import</span> <span class="n">comparison_plot</span>
+<span class="n">comparison_plot</span><span class="p">([</span><span class="n">decomposition</span><span class="p">,</span> <span class="n">modified_decomposition</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Comparison of Decompositions&quot;</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bebbf72219b9ab3773c8ce7d61e9f7a1aeae391f997096bc1078e6daf0c932e2.png" src="../../_images/bebbf72219b9ab3773c8ce7d61e9f7a1aeae391f997096bc1078e6daf0c932e2.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
