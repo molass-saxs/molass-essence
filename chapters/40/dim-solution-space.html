@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.3. Degrees of Freedom &#8212; Molass Library Essense</title>
+    <title>4.3. Dimension of Solution Space &#8212; Molass Library Essense</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -59,12 +59,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/degrees-of-freedom';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/dim-solution-space';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Underdeterminedness of EGH Modeling" href="u14ness.html" />
-    <link rel="prev" title="4.2. Low Rank Assumptions" href="matrix-rank.html" />
+    <link rel="next" title="4.4. Underdeterminedness of EGH Modeling" href="underdetermined.html" />
+    <link rel="prev" title="4.2. Assumptions in Rank Estimation" href="matrix-rank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,9 +207,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.2. Low Rank Assumptions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Degrees of Freedom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="u14ness.html">4.4. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.2. Assumptions in Rank Estimation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Dimension of Solution Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.4. Underdeterminedness of EGH Modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/40/degrees-of-freedom.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/40/dim-solution-space.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Degrees of Freedom</h1>
+    <h1>Dimension of Solution Space</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,9 +405,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="degrees-of-freedom">
-<h1><span class="section-number">4.3. </span>Degrees of Freedom<a class="headerlink" href="#degrees-of-freedom" title="Link to this heading">#</a></h1>
-<p>Or the dimension of solution space. We don`t distiguish the nuances here.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dimension-of-solution-space">
+<h1><span class="section-number">4.3. </span>Dimension of Solution Space<a class="headerlink" href="#dimension-of-solution-space" title="Link to this heading">#</a></h1>
+<p>Or the degrees of freedom in optimization. We don’t distiguish the nuances here.</p>
 <section id="distance-in-transformed-space">
 <h2><span class="section-number">4.3.1. </span>Distance in Transformed Space<a class="headerlink" href="#distance-in-transformed-space" title="Link to this heading">#</a></h2>
 <p>For the discussion of degrees of freedom, let us consider a linear transformation associated with a matrix <span class="math notranslate nohighlight">\(A[1,2,3]^T\)</span> from a 3D space to a 1D space. This trasformation mappes the unit cube to a line segment. (See the figure below)</p>
@@ -530,7 +530,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c55c1b91a306041ed0dc7e915fe3dab1649f9d3109d4e74613b551717482da51.png" src="../../_images/c55c1b91a306041ed0dc7e915fe3dab1649f9d3109d4e74613b551717482da51.png" />
+<img alt="../../_images/70a1956ed0bc7e9550368223419b5eb5a69a1a9462b38e57be6e9ec76e0bf62d.png" src="../../_images/70a1956ed0bc7e9550368223419b5eb5a69a1a9462b38e57be6e9ec76e0bf62d.png" />
 </div>
 </div>
 </section>
@@ -584,7 +584,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d4d0779756c0877d28de3f1542c91060982635d1350b2be2fa4ad487d16e871d.png" src="../../_images/d4d0779756c0877d28de3f1542c91060982635d1350b2be2fa4ad487d16e871d.png" />
+<img alt="../../_images/3818867a99851c61ac599324d1a26122bdb06c0f22bdc8d5fa3cc8de73e29d3f.png" src="../../_images/3818867a99851c61ac599324d1a26122bdb06c0f22bdc8d5fa3cc8de73e29d3f.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -630,11 +630,11 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Low Rank Assumptions</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Assumptions in Rank Estimation</p>
       </div>
     </a>
     <a class="right-next"
-       href="u14ness.html"
+       href="underdetermined.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

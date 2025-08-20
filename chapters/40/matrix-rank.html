@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.2. Low Rank Assumptions &#8212; Molass Library Essense</title>
+    <title>4.2. Assumptions in Rank Estimation &#8212; Molass Library Essense</title>
   
   
   
@@ -63,7 +63,7 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.3. Degrees of Freedom" href="degrees-of-freedom.html" />
+    <link rel="next" title="4.3. Dimension of Solution Space" href="dim-solution-space.html" />
     <link rel="prev" title="4.1. Relation between LRF and SVD" href="relation-lrf-svd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,9 +207,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Low Rank Assumptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="degrees-of-freedom.html">4.3. Degrees of Freedom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="u14ness.html">4.4. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Assumptions in Rank Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dim-solution-space.html">4.3. Dimension of Solution Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.4. Underdeterminedness of EGH Modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Low Rank Assumptions</h1>
+    <h1>Assumptions in Rank Estimation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,9 +405,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="low-rank-assumptions">
-<h1><span class="section-number">4.2. </span>Low Rank Assumptions<a class="headerlink" href="#low-rank-assumptions" title="Link to this heading">#</a></h1>
-<p>In this section, we summarize the assumptions we usually use, some of which are mathematically trivial (or self-evident), or found to be computationally fundamental from our experince. These will be refered to as our <code class="docutils literal notranslate"><span class="pre">&quot;low-rank</span> <span class="pre">assumptions&quot;</span></code>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="assumptions-in-rank-estimation">
+<h1><span class="section-number">4.2. </span>Assumptions in Rank Estimation<a class="headerlink" href="#assumptions-in-rank-estimation" title="Link to this heading">#</a></h1>
+<p>In this section, we summarize the assumptions we usually use, some of which are mathematically trivial (or self-evident), or found to be computationally fundamental from our experince. These will be refered to as our <code class="docutils literal notranslate"><span class="pre">&quot;rank</span> <span class="pre">assumptions&quot;</span></code>.</p>
 <section id="basic-rules">
 <h2><span class="section-number">4.2.1. </span>Basic Rules<a class="headerlink" href="#basic-rules" title="Link to this heading">#</a></h2>
 <p>For the discussion in this section, we do not distiguish notations among curves, vectors and matrices in the following way.</p>
@@ -499,11 +499,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="degrees-of-freedom.html"
+       href="dim-solution-space.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.3. </span>Degrees of Freedom</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Dimension of Solution Space</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
