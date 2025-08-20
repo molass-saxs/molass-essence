@@ -13,7 +13,7 @@ You can read the chapters of the left sidebar in order. Otherwise, glance over t
 See also as you proceed:
 
 * [Molass Library Tutorial](https://nshimizu0721.github.io/molass-tutorial/) for how to use,
-* [Molass Technical Report](https://freesemt.github.io/molass-technical/) for techincal details,
+* [Molass Technical Report](https://nshimizu0721.github.io/molass-technical/) for techincal details,
 * [Molass Library Reference](https://nshimizu0721.github.io/molass-library/) for function reference,
 * [Molass Library Repository](https://github.com/nshimizu0721/molass-library) for source code.
 
