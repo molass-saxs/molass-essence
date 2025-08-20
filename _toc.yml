@@ -47,10 +47,10 @@ chapters:
   - file: chapters/40/relation-lrf-svd
     title: Relation between LRF and SVD
   - file: chapters/40/matrix-rank
-    title: Low Rank Assumptions
-  - file: chapters/40/degrees-of-freedom
-    title: Degrees of Freedom
-  - file: chapters/40/u14ness
+    title: Assumptions in Rank Estimation
+  - file: chapters/40/dim-solution-space
+    title: Dimension of Solution Space
+  - file: chapters/40/underdetermined
     title: Underdeterminedness of EGH Modeling
   - file: chapters/40/proportional
     title: Proportional EGH Modeling
