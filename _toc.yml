@@ -29,7 +29,7 @@ chapters:
   - file: chapters/20/hammouda
     title: Guinier-Porod Model
   - file: chapters/20/amino-acid
-    title: Amino Acid Absorbance
+    title: UV Absorbance of Amino Acids
 - file: chapters/30/linear-algebra
   title: Linear Algebra Basics
   sections:
