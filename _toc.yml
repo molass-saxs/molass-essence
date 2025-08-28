@@ -55,22 +55,22 @@ chapters:
   - file: chapters/40/proportional
     title: Proportional EGH Modeling
 - file: chapters/50/saxs-theory
-  title: SAXS Theory
+  title: SAXS Theory Basics
   sections:
   - file: chapters/50/fourier
     title: Fourier Transform - from Density to Scattering
   - file: chapters/50/guinier
     title: Guinier Approximation
+  - file: chapters/50/scattering-factors
+    title: Form and Structure Factors
   - file: chapters/50/interparticle
     title: Interparticle Effects
-  - file: chapters/50/structure
-    title: Structure Factor
-  - file: chapters/50/dependent-factor
-    title: Dependent Factor Issue
+  - file: chapters/50/worsened-errors
+    title: Linearly Worsened Errors
   - file: chapters/50/bounded-lrf
-    title: Bounded Low-Rank Factorization
+    title: Bounded Structure Factorization
 - file: chapters/60/sec-theory
-  title: SEC Theory
+  title: SEC Theory Basics
   sections:
   - file: chapters/60/plate-theory
     title: Plate Theory
