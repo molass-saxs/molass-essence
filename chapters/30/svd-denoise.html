@@ -213,16 +213,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../50/fourier.html">5.1. Fourier Transform - from Density to Scattering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/scattering-factors.html">5.3. Form and Structure Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.4. Interparticle Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/worsened-errors.html">5.5. Linearly Worsened Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Structure Factorization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../60/plate-theory.html">6.1. Plate Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../60/stochastic-theory.html">6.2. Stochastic Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../60/kinetic-theory.html">6.3. Kinetic Theory</a></li>
@@ -409,7 +409,7 @@ document.write(`
 <span id="svd-denoise"></span><h1><span class="section-number">3.4. </span>Noise Reduction with SVD<a class="headerlink" href="#noise-reduction-with-svd" title="Link to this heading">#</a></h1>
 <section id="how-to-denoise">
 <h2><span class="section-number">3.4.1. </span>How to Denoise<a class="headerlink" href="#how-to-denoise" title="Link to this heading">#</a></h2>
-<p>As commonly known <span id="id1">[<a class="reference internal" href="../90/references.html#id14" title="Thomas Schanze. Compression and noise reduction of biomedical signals by singular value decomposition. IFAC-PapersOnLine, 51(2):361-366, 2018. 9th Vienna International Conference on Mathematical Modelling. URL: https://www.sciencedirect.com/science/article/pii/S2405896318300661, doi:https://doi.org/10.1016/j.ifacol.2018.03.062.">Sch18</a>]</span>, we can denoise <span class="math notranslate nohighlight">\(M\)</span> by ignoring the insignificant tail<a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> of the following expansion made from SVD - Singular Value Decomposition - based on the linear nature expected in the data.</p>
+<p>As commonly known <span id="id1">[<a class="reference internal" href="../90/references.html#id15" title="Thomas Schanze. Compression and noise reduction of biomedical signals by singular value decomposition. IFAC-PapersOnLine, 51(2):361-366, 2018. 9th Vienna International Conference on Mathematical Modelling. URL: https://www.sciencedirect.com/science/article/pii/S2405896318300661, doi:https://doi.org/10.1016/j.ifacol.2018.03.062.">Sch18</a>]</span>, we can denoise <span class="math notranslate nohighlight">\(M\)</span> by ignoring the insignificant tail<a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> of the following expansion made from SVD - Singular Value Decomposition - based on the linear nature expected in the data.</p>
 <div class="math notranslate nohighlight">
 \[ M = \sum_{i=1}^{n} \sigma_i u_i v_i^* \qquad \qquad (4) \]</div>
 <p>where</p>
@@ -501,7 +501,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e1573c25ff34c75b514f0bd063079007597bf9e3017f90cf299ec93913b9daf1.png" src="../../_images/e1573c25ff34c75b514f0bd063079007597bf9e3017f90cf299ec93913b9daf1.png" />
+<img alt="../../_images/f65774adcb73ae5ff22b0bbfff7d8a0416fbb3728c819b921373039a3fc0d5e0.png" src="../../_images/f65774adcb73ae5ff22b0bbfff7d8a0416fbb3728c819b921373039a3fc0d5e0.png" />
 </div>
 </div>
 <p>We can observe significant improvement in the 3D views on the right, while the estimated scattering curves on the left look almost the same. The explanation for this gap remains to be resolved. It may indicate a limitation of SVD-based denoising when it comes to improving the estimation of the scattering curve.</p>

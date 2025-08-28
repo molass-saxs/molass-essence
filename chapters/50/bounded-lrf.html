@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.6. Guinier Approximation &#8212; Molass Library Essense</title>
+    <title>5.6. Bounded Structure Factorization &#8212; Molass Library Essense</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. SEC Theory Basics" href="../60/sec-theory.html" />
-    <link rel="prev" title="5.5. Dependent Factor Issue" href="dependent-factor.html" />
+    <link rel="prev" title="5.5. Linearly Worsened Errors" href="worsened-errors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,16 +211,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="saxs-theory.html">5. SAXS Theory</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="saxs-theory.html">5. SAXS Theory Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="fourier.html">5.1. Fourier Transform - from Density to Scattering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guinier.html">5.2. Guinier Approximation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interparticle.html">5.3. Interparticle Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dependent-factor.html">5.5. Dependent Factor Issue</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.6. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scattering-factors.html">5.3. Form and Structure Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interparticle.html">5.4. Interparticle Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="worsened-errors.html">5.5. Linearly Worsened Errors</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.6. Bounded Structure Factorization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../60/plate-theory.html">6.1. Plate Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../60/stochastic-theory.html">6.2. Stochastic Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../60/kinetic-theory.html">6.3. Kinetic Theory</a></li>
@@ -378,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Guinier Approximation</h1>
+    <h1>Bounded Structure Factorization</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,8 +392,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="guinier-approximation">
-<h1><span class="section-number">5.6. </span>Guinier Approximation<a class="headerlink" href="#guinier-approximation" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bounded-structure-factorization">
+<h1><span class="section-number">5.6. </span>Bounded Structure Factorization<a class="headerlink" href="#bounded-structure-factorization" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Strictly speaking, it might be more accurate to call this “bounded structure factor low rank factorization.” However, for brevity, we refer to it as “bounded structure factorization.”</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.5.0&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.5.0 or higher.&quot;</span>
+<span class="kn">from</span> <span class="nn">molass.SAXS.Theory.SolidSphere</span> <span class="kn">import</span> <span class="n">demo4</span>
+<span class="n">demo4</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d436826e7e28dcf14e6df6b5614d981ebc79967582a28c43a53ff75480c54243.png" src="../../_images/d436826e7e28dcf14e6df6b5614d981ebc79967582a28c43a53ff75480c54243.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.SAXS.Theory.SfBound</span> <span class="kn">import</span> <span class="n">demo</span>
+<span class="n">demo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d0dec552475b869e73fb189b693ed707ed4e241b48661579dc2aa0de57a2733a.png" src="../../_images/d0dec552475b869e73fb189b693ed707ed4e241b48661579dc2aa0de57a2733a.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,12 +455,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dependent-factor.html"
+       href="worsened-errors.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.5. </span>Dependent Factor Issue</p>
+        <p class="prev-next-title"><span class="section-number">5.5. </span>Linearly Worsened Errors</p>
       </div>
     </a>
     <a class="right-next"

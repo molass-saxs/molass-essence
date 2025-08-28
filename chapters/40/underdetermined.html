@@ -211,16 +211,16 @@
 <li class="toctree-l2"><a class="reference internal" href="proportional.html">4.5. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../50/fourier.html">5.1. Fourier Transform - from Density to Scattering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.3. Interparticle Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/structure.html">5.4. Structure Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/dependent-factor.html">5.5. Dependent Factor Issue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Low-Rank Factorization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/scattering-factors.html">5.3. Form and Structure Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.4. Interparticle Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/worsened-errors.html">5.5. Linearly Worsened Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Structure Factorization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../60/plate-theory.html">6.1. Plate Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../60/stochastic-theory.html">6.2. Stochastic Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../60/kinetic-theory.html">6.3. Kinetic Theory</a></li>
@@ -397,7 +397,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
-<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.4.0 or higher.&quot;</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.4.2&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.4.0 or higher.&quot;</span>
 <span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">get_version</span>
 <span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass_data version 0.3.0 or higher.&quot;</span>
 <span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE4</span>
@@ -411,13 +411,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 203/203 [00:42&lt;00:00,  4.72it/s]
-developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-</pre></div>
-</div>
-<img alt="../../_images/821b7ff57ab3a5012e512511726c40ba21710043081d047c920f26dc23cbace9.png" src="../../_images/821b7ff57ab3a5012e512511726c40ba21710043081d047c920f26dc23cbace9.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -425,12 +418,6 @@ developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&qu
 <span class="n">decomposition2_1</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-</pre></div>
-</div>
-<img alt="../../_images/fc2e13fe64cac935c0a6dd5c21cd1b763857f501f27fbfd86fa5b92fcf827f2e.png" src="../../_images/fc2e13fe64cac935c0a6dd5c21cd1b763857f501f27fbfd86fa5b92fcf827f2e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -440,12 +427,6 @@ developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&qu
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-</pre></div>
-</div>
-<img alt="../../_images/f5e2ff18c302f6295dc0963ad9d2e31f61ab58bab95df8724fd3e9dd21c267fd.png" src="../../_images/f5e2ff18c302f6295dc0963ad9d2e31f61ab58bab95df8724fd3e9dd21c267fd.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,33 +435,40 @@ developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&qu
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-</pre></div>
-</div>
-<img alt="../../_images/42f69e8166576b8510eb05b2a244eaaff7bc151c8592906bf45535bb896cdee0.png" src="../../_images/42f69e8166576b8510eb05b2a244eaaff7bc151c8592906bf45535bb896cdee0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomposition3_6</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">randomize</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomposition3_6</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">randomize</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">decomposition3_6</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Global optimization</span>
+    <span class="n">decomposition3_g</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">global_opt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sec_constraints</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">decomposition3_g</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="../../_images/1a430162774fbcfc27cd8bad921beacb6fe9c9b4c22499c4eb0e8a91513fb7d1.png" src="../../_images/1a430162774fbcfc27cd8bad921beacb6fe9c9b4c22499c4eb0e8a91513fb7d1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="c1"># Global optimization</span>
-    <span class="n">decomposition3_g</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">global_opt</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">decomposition3_g</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">curve</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">decomposition3_g</span><span class="o">.</span><span class="n">xr_ccurves</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">([</span><span class="n">k</span><span class="p">],</span> <span class="n">curve</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">curve</span><span class="o">.</span><span class="n">get_xy</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
