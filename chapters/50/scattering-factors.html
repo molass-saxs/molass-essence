@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -413,7 +413,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="form-and-structure-factors">
 <h1><span class="section-number">5.3. </span>Form and Structure Factors<a class="headerlink" href="#form-and-structure-factors" title="Link to this heading">#</a></h1>
-<p>For the discusion in the following chapters, the definitions of form factor and structure factor are presented. Take them for granted. See <span id="id1">[<a class="reference internal" href="../90/references.html#id32" title="Cedric J. Gommes, Sebastian Jaksch, and Henrich Frielinghaus. Small-angle scattering for beginners. Journal of Applied Crystallography, 54(6):1832–1843, Dec 2021. URL: https://doi.org/10.1107/S1600576721010293, doi:10.1107/S1600576721010293.">GJF21</a>]</span>.</p>
+<p>For the discusion in the later chapters, the definitions of form factor and structure factor are presented in this chapter. According to <span id="id1">[<a class="reference internal" href="../90/references.html#id32" title="Cedric J. Gommes, Sebastian Jaksch, and Henrich Frielinghaus. Small-angle scattering for beginners. Journal of Applied Crystallography, 54(6):1832–1843, Dec 2021. URL: https://doi.org/10.1107/S1600576721010293, doi:10.1107/S1600576721010293.">GJF21</a>]</span>, these two factors are pedagogically distiguished as follows.</p>
+<ul class="simple">
+<li><p>form factor: scattering by individual particles</p></li>
+<li><p>structure factor: scattering by collections of particles</p></li>
+</ul>
+<p>To put it simply, we can pragmatically undertstand as follows.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( I(q) \sim P(q) \)</span> when interpaticle effects are ignored (i.e., <span class="math notranslate nohighlight">\(S(q)=1\)</span> in this case)</p></li>
+<li><p><span class="math notranslate nohighlight">\( I(q) \sim P(q)S(q) \)</span> when interpaticle effects are considered.</p></li>
+</ul>
 <section id="form-factor">
 <h2><span class="section-number">5.3.1. </span>Form Factor<a class="headerlink" href="#form-factor" title="Link to this heading">#</a></h2>
 <p>For an individual particle, the form factor is defined as</p>
