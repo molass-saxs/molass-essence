@@ -4,7 +4,7 @@
 This book is scheduled to be publicly available in September, 2025.
 ```
 
-Molass Library is a rewrite of [MOLASS](https://www.jstage.jst.go.jp/article/biophysico/20/1/20_e200001/_article) which is an analytical tool for SEC-SAXS experiment data currently hosted at [Photon Factory](https://pfwww.kek.jp/saxs/MOLASS.html) or [SPring-8](http://www.spring8.or.jp/en/), Japan. It is designed for scripting in Jupyter notebooks, thereby attaining greater flexibility compared to the predecessor thanks to the Python ecosystem diversity.
+Molass Library is a rewrite of [MOLASS](https://pfwww.kek.jp/saxs/MOLASSE.html) which is an analytical tool for SEC-SAXS experiment data currently hosted at [Photon Factory](https://www2.kek.jp/imss/pf/eng/) or [SPring-8](http://www.spring8.or.jp/en/), Japan. It is designed for scripting in Jupyter notebooks, thereby attaining greater flexibility compared to the predecessor thanks to the Python ecosystem diversity.
 
 This document describes the theoretical essence of the library, meaning that we will provide brief entries on each key point rather than exploring every subject in depth. Many topics are still under investigation, and it is more important for readers to be able to quickly try these ideas and see for themselves how they work than to present our elaborate but not yet fully established results.
 
