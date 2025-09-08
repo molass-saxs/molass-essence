@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -392,8 +392,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plate-theory">6.1.1. Basic Plate Theory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-formula-for-asymmetric-models">6.1.2. Modified Formula for Asymmetric Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.1.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plate-theory">6.1.2. Basic Plate Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-formula-for-asymmetric-models">6.1.3. Modified Formula for Asymmetric Models</a></li>
 </ul>
             </nav>
         </div>
@@ -407,25 +408,40 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="plate-theory">
 <h1><span class="section-number">6.1. </span>Plate Theory<a class="headerlink" href="#plate-theory" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">6.1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Plate theory quantifies the relationship between retention time and chromatographic peak width. In simple terms, the longer the retention time, the wider the peak. The concept of “theoretical plates,” introduced by Martin and Synge in 1941 <span id="id1">[<a class="reference internal" href="../90/references.html#id33" title="A J P Martin and R L M Synge. A new form of chromatogram employing two liquid phases. Biochem. J., 35(12):1358–1368, December 1941.">MS41</a>]</span>, is rooted in the structure of Pascal’s triangle, which illustrates particle distribution across discrete stages. This distribution follows the binomial theorem, and as the number of plates increases, it approaches a Gaussian distribution—representing the symmetric case.</p>
+<p>In practice, peak shapes can be asymmetric due to various effects. Models such as EMG (Exponentially Modified Gaussian) <span id="id2">[<a class="reference internal" href="../90/references.html#id34" title="Yuri Kalambet, Yuri Kozmin, Ksenia Mikhailova, Igor Nagaev, and Pavel Tikhonov. Reconstruction of chromatographic peaks using the exponentially modified gaussian function. J. Chemom., 25(7):352–356, July 2011.">KKM+11</a>]</span> and EGH (Exponentially Gaussian Hybrid) <span id="id3">[<a class="reference internal" href="../90/references.html#id16" title="Kevin Lan and James W. Jorgenson. A hybrid of exponential and gaussian functions as a simple model of asymmetric chromatographic peaks. Journal of Chromatography A, 915(1):1-13, 2001. URL: https://www.sciencedirect.com/science/article/pii/S0021967301005945, doi:https://doi.org/10.1016/S0021-9673(01)00594-5.">LJ01</a>]</span> can be used to fit asymmetric peaks.</p>
+</section>
 <section id="basic-plate-theory">
-<h2><span class="section-number">6.1.1. </span>Basic Plate Theory<a class="headerlink" href="#basic-plate-theory" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1.2. </span>Basic Plate Theory<a class="headerlink" href="#basic-plate-theory" title="Link to this heading">#</a></h2>
+<p>The number of theoretical plates, <span class="math notranslate nohighlight">\(N\)</span>, to the retention time, <span class="math notranslate nohighlight">\(t_R\)</span>, and the standard deviation of the elution peak, <span class="math notranslate nohighlight">\(\sigma\)</span>, as follows:</p>
 <div class="math notranslate nohighlight">
-\[ N = \frac{t_R^2}{\sigma^2} \]</div>
+\[ N = \frac{t_R^2}{\sigma^2} \qquad\qquad\qquad (1) \]</div>
 <figure class="align-default" id="theoretical-plates">
 <img alt="../../_images/theoretical_plates.png" src="../../_images/theoretical_plates.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Theoretical Plates</span><a class="headerlink" href="#theoretical-plates" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p>This figure, based on Pascal’s triangle, visually connects the binomial distribution of particles to the concept of plates and the resulting Gaussian peak shape.</p>
+<p>To further illustrate this, consider the accompanying animations. In the first animation, a single species of particles moves down the column, resulting in a single, symmetric elution peak at the bottom. In the second animation, two different species are present, producing two distinct peaks in the elution curve.</p>
 <video width="100%" controls autoplay>
 <source src="../../_static/animations/plate_theory.mp4" type="video/mp4">
 </video><video width="100%" controls autoplay>
 <source src="../../_static/animations/plate_theory-2.mp4" type="video/mp4">
 </video></section>
 <section id="modified-formula-for-asymmetric-models">
-<h2><span class="section-number">6.1.2. </span>Modified Formula for Asymmetric Models<a class="headerlink" href="#modified-formula-for-asymmetric-models" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1.3. </span>Modified Formula for Asymmetric Models<a class="headerlink" href="#modified-formula-for-asymmetric-models" title="Link to this heading">#</a></h2>
+<p>You can interpret the above formula as:</p>
 <div class="math notranslate nohighlight">
-\[  N \approx \frac{t_R^2}{(\sigma^2 + \sigma|\tau| +\tau^2)\epsilon_2} \approx \frac{t_R^2}{\sigma^2+\tau^2}   \]</div>
+\[ N = \frac{t_R^2}{second \  central \  moment} \qquad\qquad\qquad (2) \]</div>
+<p>Then, it is traightforward that you can extend the rule for asymmetric models as follows.</p>
+<div class="math notranslate nohighlight">
+\[  N \approx \frac{t_R^2}{\sigma^2+\tau^2} \qquad\qquad\qquad\qquad  (3)  \]</div>
+<div class="math notranslate nohighlight">
+\[  N \approx \frac{t_R^2}{(\sigma^2 + \sigma|\tau| +\tau^2)\epsilon_2} \qquad\qquad\qquad (4)  \]</div>
+<p>The formulea (3) and (4) correspond to the second central moments (or variances) of EMG and EGH respectively. We prefer to use EGH for modeling because it is “mathematically simple and numerically stable.” We also use the formula (3) for simplicity, instead of (4), where it is acceptable as an approximation.</p>
 </section>
 </section>
 
@@ -493,8 +509,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plate-theory">6.1.1. Basic Plate Theory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-formula-for-asymmetric-models">6.1.2. Modified Formula for Asymmetric Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">6.1.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plate-theory">6.1.2. Basic Plate Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-formula-for-asymmetric-models">6.1.3. Modified Formula for Asymmetric Models</a></li>
 </ul>
   </nav></div>
 
