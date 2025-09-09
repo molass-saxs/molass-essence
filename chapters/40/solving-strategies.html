@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.6. Proportional EGH Modeling &#8212; Molass Library Essense</title>
+    <title>4.2. Notes on Solving Strategies &#8212; Molass Library Essense</title>
   
   
   
@@ -57,12 +57,14 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/proportional';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/solving-strategies';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. SAXS Theory Basics" href="../50/saxs-theory.html" />
-    <link rel="prev" title="4.5. Underdeterminedness of EGH Modeling" href="underdetermined.html" />
+    <link rel="next" title="4.3. Assumptions in Rank Estimation" href="matrix-rank.html" />
+    <link rel="prev" title="4.1. Relation between LRF and SVD" href="relation-lrf-svd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -205,11 +207,11 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solving-strategies.html">4.2. Notes on Solving Strategies</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Notes on Solving Strategies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.3. Assumptions in Rank Estimation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dim-solution-space.html">4.4. Dimension of Solution Space</a></li>
 <li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.5. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.6. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proportional.html">4.6. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -297,7 +299,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/40/proportional.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/40/solving-strategies.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proportional EGH Modeling</h1>
+    <h1>Notes on Solving Strategies</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,13 +393,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-component-proportions">4.6.1. How to Modify the Component Proportions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-vary-the-component-proportions">4.6.2. How to Vary the Component Proportions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-proportions-into-two-components">Varying Proportions into Two Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-proportions-into-three-components">Varying Proportions into Three Components</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-vs-model-free-approaches">4.2.1. Modeling vs. Model-Free Approaches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elution-modeling-vs-spectrum-modeling">4.2.2. Elution modeling vs. Spectrum modeling</a></li>
 </ul>
             </nav>
         </div>
@@ -409,180 +406,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="proportional-egh-modeling">
-<h1><span class="section-number">4.6. </span>Proportional EGH Modeling<a class="headerlink" href="#proportional-egh-modeling" title="Link to this heading">#</a></h1>
-<section id="how-to-modify-the-component-proportions">
-<h2><span class="section-number">4.6.1. </span>How to Modify the Component Proportions<a class="headerlink" href="#how-to-modify-the-component-proportions" title="Link to this heading">#</a></h2>
-<p>First, let us introduce what we think are the standard steps as follows.</p>
-<ul class="simple">
-<li><p>Default decomposition</p></li>
-<li><p>Show the default proportions</p></li>
-<li><p>Decompose with modified proportions</p></li>
-<li><p>Confirm by comparison Plot</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
-<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.5.2&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.5.2 or higher.&quot;</span>
-<span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE1</span>
-<span class="kn">from</span> <span class="nn">molass.DataObjects</span> <span class="kn">import</span> <span class="n">SecSaxsData</span> <span class="k">as</span> <span class="n">SSD</span>
-<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE1</span><span class="p">)</span>
-<span class="n">trimmed_ssd</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
-<span class="n">corrected_ssd</span> <span class="o">=</span> <span class="n">trimmed_ssd</span><span class="o">.</span><span class="n">corrected_copy</span><span class="p">()</span>
-<span class="n">decomposition</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">decomposition</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Default Decomposition into 3 Components&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeros at the angular ends of error data have been replaced with the adjacent values.
-developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-</pre></div>
-</div>
-<img alt="../../_images/93ab762260ae8efacc1cfa519bd447c86e423264e7474fd0502b1f38fe0287e1.png" src="../../_images/93ab762260ae8efacc1cfa519bd447c86e423264e7474fd0502b1f38fe0287e1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proportions</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">get_proportions</span><span class="p">()</span>
-<span class="n">proportions</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.39559791, 0.12469259, 0.4797095 ])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified_decomposition</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">proportions</span><span class="o">=</span><span class="p">[</span><span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.PlotUtils.Comparison</span> <span class="kn">import</span> <span class="n">comparison_plot</span>
-<span class="n">comparison_plot</span><span class="p">([</span><span class="n">decomposition</span><span class="p">,</span> <span class="n">modified_decomposition</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Comparison of Decompositions&quot;</span><span class="p">,</span> <span class="n">show_proportions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proportions of the first decomposition: [0.39559791 0.12469259 0.4797095 ]
-Proportions of the second decomposition: [0.31999386 0.20000772 0.47999841]
-</pre></div>
-</div>
-<img alt="../../_images/bcab31b8c7cf109b2a2c0e98915ac1ebcae835d55f579c408a500feb6a94e19c.png" src="../../_images/bcab31b8c7cf109b2a2c0e98915ac1ebcae835d55f579c408a500feb6a94e19c.png" />
-</div>
-</div>
-<p>In this comparison plot, we can compare the propotions easily.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="notes-on-solving-strategies">
+<h1><span class="section-number">4.2. </span>Notes on Solving Strategies<a class="headerlink" href="#notes-on-solving-strategies" title="Link to this heading">#</a></h1>
+<p>In terms of general philosophy, our approach can be roughly classified as elution modeling. Let us briefly discuss this classification to clarify our position in the broader context.</p>
+<section id="modeling-vs-model-free-approaches">
+<h2><span class="section-number">4.2.1. </span>Modeling vs. Model-Free Approaches<a class="headerlink" href="#modeling-vs-model-free-approaches" title="Link to this heading">#</a></h2>
+<p>There exist some model-free approaches, such as REGALS <span id="id1">[<a class="reference internal" href="../90/references.html#id21" title="Steve P. Meisburger, Da Xu, and Nozomi Ando. \it REGALS: a general method to deconvolve X-ray scattering data from evolving mixtures. IUCrJ, 8(2):225–237, Mar 2021. URL: https://doi.org/10.1107/S2052252521000555, doi:10.1107/S2052252521000555.">MXA21</a>]</span> and EFAMIX <span id="id2">[<a class="reference internal" href="../90/references.html#id22" title="Petr V Konarev, Melissa A Graewert, Cy M Jeffries, Masakazu Fukuda, Taisiia A Cheremnykh, Vladimir V Volkov, and Dmitri I Svergun. EFAMIX, a tool to decompose inline chromatography SAXS data from partially overlapping components. Protein Sci., 31(1):269–282, January 2022.">KGJ+22</a>]</span>, which are based on the idea of “Evolving Factor Analysis” <span id="id3">[<a class="reference internal" href="../90/references.html#id20" title="Marcel Maeder and Andreas D. Zuberbuehler. The resolution of overlapping chromatographic peaks by evolving factor analysis. Analytica Chimica Acta, 181:287-291, 1986. URL: https://www.sciencedirect.com/science/article/pii/S0003267000852484, doi:https://doi.org/10.1016/S0003-2670(00)85248-4.">MZ86</a>]</span>.</p>
+<p>In this contrast, our approach is classified as modeling.</p>
 </section>
-<section id="how-to-vary-the-component-proportions">
-<h2><span class="section-number">4.6.2. </span>How to Vary the Component Proportions<a class="headerlink" href="#how-to-vary-the-component-proportions" title="Link to this heading">#</a></h2>
-<p>In the previous example, we could be reasonably confident about the number of components, to a certain extent, based on the observation of the elution curve.
-However, that is not always the case. To illustrate this, let us consider another example where we cannot be so confident.</p>
-<p>Below, we will decompose another sample in two ways: first into two components, and then into three components. We will also vary the proportions using another utility function.</p>
-<section id="preparation">
-<h3>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h3>
-<p>For effective observation, we will also prepare the Rg curve.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE4</span>
-<span class="kn">from</span> <span class="nn">molass.DataObjects</span> <span class="kn">import</span> <span class="n">SecSaxsData</span> <span class="k">as</span> <span class="n">SSD</span>
-<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE4</span><span class="p">)</span>
-<span class="n">trimmed_ssd</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
-<span class="n">corrected_ssd</span> <span class="o">=</span> <span class="n">trimmed_ssd</span><span class="o">.</span><span class="n">corrected_copy</span><span class="p">()</span>
-<span class="n">rgcurve</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">xr</span><span class="o">.</span><span class="n">compute_rgcurve</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 203/203 [00:43&lt;00:00,  4.62it/s]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="varying-proportions-into-two-components">
-<h3>Varying Proportions into Two Components<a class="headerlink" href="#varying-proportions-into-two-components" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">num_trails</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">species1_proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">num_trails</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="n">species2_proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">num_trails</span><span class="p">)</span>
-<span class="n">proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">species1_proportions</span><span class="p">,</span> <span class="n">species2_proportions</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">proportions</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.        , 1.        ],
-       [3.        , 1.28571429],
-       [3.        , 1.57142857],
-       [3.        , 1.85714286],
-       [3.        , 2.14285714],
-       [3.        , 2.42857143],
-       [3.        , 2.71428571],
-       [3.        , 3.        ]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.Decompose.VaryUtils</span> <span class="kn">import</span> <span class="n">plot_varied_decompositions</span>
-<span class="n">corrected_ssd</span><span class="o">.</span><span class="n">plot_varied_decompositions</span><span class="p">(</span><span class="n">proportions</span><span class="p">,</span> <span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">,</span> <span class="n">best</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Github\molass-library\molass\Decompose\VaryUtils.py:52: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-  ax.legend()
-</pre></div>
-</div>
-<img alt="../../_images/2d30c81b7df3cfd4ea1ba4c59da64079e79429716ef93643bd411f02a1b53876.png" src="../../_images/2d30c81b7df3cfd4ea1ba4c59da64079e79429716ef93643bd411f02a1b53876.png" />
-<img alt="../../_images/411b7384e2366bf28ef0ba50a128f248aeaa180d5956936b54db33936b54b2ca.png" src="../../_images/411b7384e2366bf28ef0ba50a128f248aeaa180d5956936b54db33936b54b2ca.png" />
-</div>
-</div>
-</section>
-<section id="varying-proportions-into-three-components">
-<h3>Varying Proportions into Three Components<a class="headerlink" href="#varying-proportions-into-three-components" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species3_proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">num_trails</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span>
-<span class="n">proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">species1_proportions</span><span class="p">,</span> <span class="n">species2_proportions</span><span class="p">,</span> <span class="n">species3_proportions</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
-<span class="n">proportions</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.        , 1.        , 1.        ],
-       [3.        , 1.28571429, 1.        ],
-       [3.        , 1.57142857, 1.        ],
-       [3.        , 1.85714286, 1.        ],
-       [3.        , 2.14285714, 1.        ],
-       [3.        , 2.42857143, 1.        ],
-       [3.        , 2.71428571, 1.        ],
-       [3.        , 3.        , 1.        ]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corrected_ssd</span><span class="o">.</span><span class="n">plot_varied_decompositions</span><span class="p">(</span><span class="n">proportions</span><span class="p">,</span> <span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">,</span> <span class="n">best</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/2b3c7769732f4e5f0c7179ef09cb9bf43e1663e8f3d14dabfa313e9f099d1a90.png" src="../../_images/2b3c7769732f4e5f0c7179ef09cb9bf43e1663e8f3d14dabfa313e9f099d1a90.png" />
-<img alt="../../_images/943306f1f04c30840757f511fe2c51dcb185cfd110ec429998b02803529141a6.png" src="../../_images/943306f1f04c30840757f511fe2c51dcb185cfd110ec429998b02803529141a6.png" />
-</div>
-</div>
-</section>
+<section id="elution-modeling-vs-spectrum-modeling">
+<h2><span class="section-number">4.2.2. </span>Elution modeling vs. Spectrum modeling<a class="headerlink" href="#elution-modeling-vs-spectrum-modeling" title="Link to this heading">#</a></h2>
+<p>From the <a class="reference internal" href="../30/mp-inverse.html#moore-penrose-inverse"><span class="std std-ref">matrix inversion</span></a> discussion in the previous chapter, we can consider two possibilities. In other words, from the factorization <span class="math notranslate nohighlight">\( M = P \cdot C \)</span>, both factors <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are equally eligible for modeling from a matehmatical point of view.</p>
+<p>If that is the case, why do we choose to model <span class="math notranslate nohighlight">\(C\)</span> (elution modeling) not <span class="math notranslate nohighlight">\(P\)</span> (spectrum modeling)?</p>
+<p>Roughly speaking, this is because spectral models are mostly shape-specific (or shape-dependent)<a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, e.g. see <span id="id5">[<a class="reference internal" href="../90/references.html#id29" title="Jan Skov Pedersen. Analysis of small-angle scattering data from colloids and polymer solutions: modeling and least-squares fitting. Advances in Colloid and Interface Science, 70:171-210, 1997. URL: https://www.sciencedirect.com/science/article/pii/S0001868697003126, doi:https://doi.org/10.1016/S0001-8686(97)00312-6.">Ped97</a>]</span>. Therefore, you have to choose the shape to use a spectral model, which is not aprropriate when the particle shape is unknown.</p>
+<p>On the other hand, elution models are rather size-dependent (if at all)<a class="footnote-reference brackets" href="#id8" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, which is also in line with SEC—Size Exclusion Chromatography.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">1</a><span class="fn-bracket">]</span></span>
+<p>In this sense, <a class="reference internal" href="../20/hammouda.html#guinier-porod-model"><span class="std std-ref">Guinier-Porod model</span></a> is an exception. However, it is known to be unrealistic from our experience at least for proteins.</p>
+</aside>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">2</a><span class="fn-bracket">]</span></span>
+<p>Also note that the size can be parametrized, which is impossible for the shape.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -617,20 +465,20 @@ However, that is not always the case. To illustrate this, let us consider anothe
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="underdetermined.html"
+       href="relation-lrf-svd.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.5. </span>Underdeterminedness of EGH Modeling</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Relation between LRF and SVD</p>
       </div>
     </a>
     <a class="right-next"
-       href="../50/saxs-theory.html"
+       href="matrix-rank.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>SAXS Theory Basics</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Assumptions in Rank Estimation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -650,13 +498,8 @@ However, that is not always the case. To illustrate this, let us consider anothe
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-component-proportions">4.6.1. How to Modify the Component Proportions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-vary-the-component-proportions">4.6.2. How to Vary the Component Proportions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-proportions-into-two-components">Varying Proportions into Two Components</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varying-proportions-into-three-components">Varying Proportions into Three Components</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-vs-model-free-approaches">4.2.1. Modeling vs. Model-Free Approaches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elution-modeling-vs-spectrum-modeling">4.2.2. Elution modeling vs. Spectrum modeling</a></li>
 </ul>
   </nav></div>
 

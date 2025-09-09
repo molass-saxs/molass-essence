@@ -207,10 +207,11 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../40/low-rank.html">4. Low Rank Factorization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../40/relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/matrix-rank.html">4.2. Assumptions in Rank Estimation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/dim-solution-space.html">4.3. Dimension of Solution Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/underdetermined.html">4.4. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.5. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/solving-strategies.html">4.2. Notes on Solving Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/matrix-rank.html">4.3. Assumptions in Rank Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/dim-solution-space.html">4.4. Dimension of Solution Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/underdetermined.html">4.5. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">4.6. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -392,8 +393,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">3.2.2. Case of Multiple Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-inverse">3.2.1. Generalized Inverse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.2. Case of Single Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">3.2.3. Case of Multiple Components</a></li>
 </ul>
             </nav>
         </div>
@@ -406,7 +408,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="moore-penrose-inverse">
-<h1><span class="section-number">3.2. </span>Moore-Penrose Inverse<a class="headerlink" href="#moore-penrose-inverse" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><span class="section-number">3.2. </span>Moore-Penrose Inverse<a class="headerlink" href="#moore-penrose-inverse" title="Link to this heading">#</a></h1>
+<section id="generalized-inverse">
+<h2><span class="section-number">3.2.1. </span>Generalized Inverse<a class="headerlink" href="#generalized-inverse" title="Link to this heading">#</a></h2>
 <p>In the previous section, we have confirmed the matrix formula <span class="math notranslate nohighlight">\( M = P \cdot C \)</span> which can be stated in natural language that a SEC-SAXS dataset can be expressed as the product of a set of spectral curves and a set of elutional curves. If it was about multiplication, how about division? The answer can be <code class="docutils literal notranslate"><span class="pre">conceptually</span></code> expressed using the Moore-Penrose inverse as follows.</p>
 <div class="math notranslate nohighlight">
 \[ P = M \cdot C^{+} \qquad \qquad (2a) \]</div>
@@ -436,8 +440,9 @@ document.write(`
 </ul>
 <p>In other words, be aware that the Moore-Penrose inverse just gives the unique paired reciprocal when the other factor is given, however, the factorization is arbitrary if no counterpart is given.</p>
 <p>In this chapter, we will confirm that the Moore-Penrose inverse plays, for matrices, a role analogous to that of the reciprocal for scalars.</p>
+</section>
 <section id="case-of-single-component">
-<h2><span class="section-number">3.2.1. </span>Case of Single Component<a class="headerlink" href="#case-of-single-component" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2.2. </span>Case of Single Component<a class="headerlink" href="#case-of-single-component" title="Link to this heading">#</a></h2>
 <p>First, let us take a look at a case where only a single component is involved.</p>
 <p>We can observe that the inverse shows a perfect fit to the original for the data without noise. Compare the fit to that for the noisy data.</p>
 <div class="cell docutils container">
@@ -503,12 +508,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ec10743daa6eb786648ca4a5cfb528989e0fb970c200e60f2de3fcc7c2d063bc.png" src="../../_images/ec10743daa6eb786648ca4a5cfb528989e0fb970c200e60f2de3fcc7c2d063bc.png" />
+<img alt="../../_images/ac2239e992dcca0c345752379bb00cd66af46dc7bf9950aaac2066a67d8fbe2e.png" src="../../_images/ac2239e992dcca0c345752379bb00cd66af46dc7bf9950aaac2066a67d8fbe2e.png" />
 </div>
 </div>
 </section>
 <section id="case-of-multiple-components">
-<h2><span class="section-number">3.2.2. </span>Case of Multiple Components<a class="headerlink" href="#case-of-multiple-components" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2.3. </span>Case of Multiple Components<a class="headerlink" href="#case-of-multiple-components" title="Link to this heading">#</a></h2>
 <p>The inverse also works in cases where multiple components are involved, although the effect of noise becomes more pronounced at the same noise level.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,7 +603,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/91884384746260bb4197faf2a515116df84ef1cb307124121418796366213587.png" src="../../_images/91884384746260bb4197faf2a515116df84ef1cb307124121418796366213587.png" />
+<img alt="../../_images/a6c9fbd236f8d7d8a84d4f07af611ea9316812fd9b201151c3bd5dcd6bbee313.png" src="../../_images/a6c9fbd236f8d7d8a84d4f07af611ea9316812fd9b201151c3bd5dcd6bbee313.png" />
 </div>
 </div>
 </section>
@@ -668,8 +673,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.1. Case of Single Component</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">3.2.2. Case of Multiple Components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-inverse">3.2.1. Generalized Inverse</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-single-component">3.2.2. Case of Single Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-of-multiple-components">3.2.3. Case of Multiple Components</a></li>
 </ul>
   </nav></div>
 

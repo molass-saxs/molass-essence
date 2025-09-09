@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.3. Dimension of Solution Space &#8212; Molass Library Essense</title>
+    <title>4.4. Dimension of Solution Space &#8212; Molass Library Essense</title>
   
   
   
@@ -63,8 +63,8 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Underdeterminedness of EGH Modeling" href="underdetermined.html" />
-    <link rel="prev" title="4.2. Assumptions in Rank Estimation" href="matrix-rank.html" />
+    <link rel="next" title="4.5. Underdeterminedness of EGH Modeling" href="underdetermined.html" />
+    <link rel="prev" title="4.3. Assumptions in Rank Estimation" href="matrix-rank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,10 +207,11 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="relation-lrf-svd.html">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.2. Assumptions in Rank Estimation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Dimension of Solution Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.4. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="proportional.html">4.5. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solving-strategies.html">4.2. Notes on Solving Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.3. Assumptions in Rank Estimation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.4. Dimension of Solution Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.5. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proportional.html">4.6. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -392,8 +393,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-in-transformed-space">4.3.1. Distance in Transformed Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-problem-with-two-degrees-of-freedom">4.3.2. Example: A Problem with Two Degrees of Freedom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-in-transformed-space">4.4.1. Distance in Transformed Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-problem-with-two-degrees-of-freedom">4.4.2. Example: A Problem with Two Degrees of Freedom</a></li>
 </ul>
             </nav>
         </div>
@@ -406,10 +407,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dimension-of-solution-space">
-<h1><span class="section-number">4.3. </span>Dimension of Solution Space<a class="headerlink" href="#dimension-of-solution-space" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4.4. </span>Dimension of Solution Space<a class="headerlink" href="#dimension-of-solution-space" title="Link to this heading">#</a></h1>
 <p>Or the degrees of freedom in optimization. We don’t distiguish the nuances here.</p>
 <section id="distance-in-transformed-space">
-<h2><span class="section-number">4.3.1. </span>Distance in Transformed Space<a class="headerlink" href="#distance-in-transformed-space" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.4.1. </span>Distance in Transformed Space<a class="headerlink" href="#distance-in-transformed-space" title="Link to this heading">#</a></h2>
 <p>For the discussion of degrees of freedom, let us consider a linear transformation associated with a matrix <span class="math notranslate nohighlight">\(A[1,2,3]^T\)</span> from a 3D space to a 1D space. This trasformation mappes the unit cube to a line segment. (See the figure below)</p>
 <p>Confirm the distances <span class="math notranslate nohighlight">\(\|A[x, y, z]^T - b\|\)</span> in the mapped space such as mapped v3 and “b” or mapped v8 and “b”, the former is 4 and the latter is zero.</p>
 <div class="cell docutils container">
@@ -535,7 +536,7 @@ document.write(`
 </div>
 </section>
 <section id="example-a-problem-with-two-degrees-of-freedom">
-<h2><span class="section-number">4.3.2. </span>Example: A Problem with Two Degrees of Freedom<a class="headerlink" href="#example-a-problem-with-two-degrees-of-freedom" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.4.2. </span>Example: A Problem with Two Degrees of Freedom<a class="headerlink" href="#example-a-problem-with-two-degrees-of-freedom" title="Link to this heading">#</a></h2>
 <p>Now, let us consider the distance mimization problem. What are the points which minimize <span class="math notranslate nohighlight">\( \|A[x, y, z]^T - b\| \)</span>?</p>
 <p>The figure below visualizes the objective function <span class="math notranslate nohighlight">\( f(x, y, z) = ||A[x, y, z]^T - b|| \)</span> for an underdetermined linear system, where <span class="math notranslate nohighlight">\(A\)</span> is a <span class="math notranslate nohighlight">\(1 \times 3\)</span> matrix and <span class="math notranslate nohighlight">\(b\)</span> is a scalar. In this case, the set of points that satisfy <span class="math notranslate nohighlight">\(x + 2y + 3z = 6\)</span> forms a plane in 3D space. All points on this plane are solutions that minimize the objective function, and they are highlighted in blue. Points not on the plane have higher values of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, shown by different colors.</p>
 <p>This example illustrates the concept of degrees of freedom in optimization problems. The degrees of freedom refer to the number of independent variables that can be adjusted to find a solution. Here, there are two degrees of freedom, so the solution space is a plane. In general, more degrees of freedom mean more ways to vary the solution while still satisfying the constraints.</p>
@@ -630,7 +631,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Assumptions in Rank Estimation</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Assumptions in Rank Estimation</p>
       </div>
     </a>
     <a class="right-next"
@@ -638,7 +639,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.4. </span>Underdeterminedness of EGH Modeling</p>
+        <p class="prev-next-title"><span class="section-number">4.5. </span>Underdeterminedness of EGH Modeling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -658,8 +659,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-in-transformed-space">4.3.1. Distance in Transformed Space</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-problem-with-two-degrees-of-freedom">4.3.2. Example: A Problem with Two Degrees of Freedom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-in-transformed-space">4.4.1. Distance in Transformed Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-problem-with-two-degrees-of-freedom">4.4.2. Example: A Problem with Two Degrees of Freedom</a></li>
 </ul>
   </nav></div>
 

@@ -63,7 +63,7 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.2. Assumptions in Rank Estimation" href="matrix-rank.html" />
+    <link rel="next" title="4.2. Notes on Solving Strategies" href="solving-strategies.html" />
     <link rel="prev" title="4. Low Rank Factorization" href="low-rank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,10 +207,11 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="low-rank.html">4. Low Rank Factorization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. Relation between LRF and SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.2. Assumptions in Rank Estimation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dim-solution-space.html">4.3. Dimension of Solution Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.4. Underdeterminedness of EGH Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="proportional.html">4.5. Proportional EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solving-strategies.html">4.2. Notes on Solving Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix-rank.html">4.3. Assumptions in Rank Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dim-solution-space.html">4.4. Dimension of Solution Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="underdetermined.html">4.5. Underdeterminedness of EGH Modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proportional.html">4.6. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -590,15 +591,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.92672575 0.37912571]
- [0.59233304 0.54411435]] [[ 1.00000000e+00  9.42337645e-17]
- [-4.66742231e-17  1.00000000e+00]]
-[[ 2.61517284e+01  8.47597988e-16]
- [-1.62600629e-16  4.13685757e-01]] [26.15172839  0.41368576]
-8.576487853735008e-15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.89690203 0.03689881]
+ [0.54838663 0.50130677]] [[ 1.00000000e+00 -5.18608345e-18]
+ [ 1.12064656e-16  1.00000000e+00]]
+[[ 2.61517284e+01 -2.56104715e-17]
+ [ 8.80959425e-17  4.13685757e-01]] [26.15172839  0.41368576]
+5.079645646361413e-15
 </pre></div>
 </div>
-<img alt="../../_images/861ae639e9efd2275bfa6786191c6b064ce1790ad86ecff279e539a39cf64e02.png" src="../../_images/861ae639e9efd2275bfa6786191c6b064ce1790ad86ecff279e539a39cf64e02.png" />
+<img alt="../../_images/b1bf798285bbcacec5b9c95d8f0d14d54c5811daf1a0be5e736729ae682c0a24.png" src="../../_images/b1bf798285bbcacec5b9c95d8f0d14d54c5811daf1a0be5e736729ae682c0a24.png" />
 </div>
 </div>
 </section>
@@ -651,11 +652,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="matrix-rank.html"
+       href="solving-strategies.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Assumptions in Rank Estimation</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Notes on Solving Strategies</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
