@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -395,7 +395,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partilce-size-and-scattering-curve">5.2.1. Partilce Size and Scattering Curve</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rg-radius-of-gyration">5.2.2. Rg ― Radius of Gyration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guinier-plot">5.2.3. Guinier Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rg-standard-deviation-equivalence">5.2.3. Rg - Standard Deviation Equivalence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guinier-plot">5.2.4. Guinier Plot</a></li>
 </ul>
             </nav>
         </div>
@@ -415,7 +416,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
-<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.6.0&#39;</span><span class="p">,</span> <span class="s1">&#39;Please update molass to the latest version&#39;</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.6.1&#39;</span><span class="p">,</span> <span class="s1">&#39;Please update molass to the latest version&#39;</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">molass.SAXS.Models.Formfactors</span> <span class="kn">import</span> <span class="n">homogeneous_sphere</span>
@@ -470,9 +471,81 @@ document.write(`
 <img alt="../../_images/8c834187b8e20e3e123f003ef63e31f28139b87776f195d5deeceaabdb40c1de.png" src="../../_images/8c834187b8e20e3e123f003ef63e31f28139b87776f195d5deeceaabdb40c1de.png" />
 </div>
 </div>
+<p>In the above plot, the shapes are defined with uniform density, meaning the density is uniformly one throughout each shape.
+The next plot illustrates this fact more clearly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">molass.Shapes</span> <span class="kn">import</span> <span class="n">Ellipsoid</span>
+<span class="kn">from</span> <span class="nn">molass.DensitySpace</span> <span class="kn">import</span> <span class="n">VoxelSpace</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">))</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span>
+<span class="n">ellipsoid</span> <span class="o">=</span> <span class="n">Ellipsoid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">space</span> <span class="o">=</span> <span class="n">VoxelSpace</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">ellipsoid</span><span class="p">)</span>
+<span class="n">space</span><span class="o">.</span><span class="n">plot_with_density</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2c51ac3a1c009f8feba258330d91d573bb703c209be8a54a2f09e6b5fc8f4ca0.png" src="../../_images/2c51ac3a1c009f8feba258330d91d573bb703c209be8a54a2f09e6b5fc8f4ca0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">space</span><span class="o">.</span><span class="n">compute_rg</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.373697563931419
+</pre></div>
+</div>
+</div>
+</div>
+<p>Confirm the concept with another plot that depicts a sphere with a Gaussian (non-uniform) density distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.DensitySpace</span> <span class="kn">import</span> <span class="n">VoxelSpace</span>
+<span class="kn">from</span> <span class="nn">molass.DensitySpace.Densities</span> <span class="kn">import</span> <span class="n">gaussian_density_for_demo</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">))</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">density</span> <span class="o">=</span> <span class="n">gaussian_density_for_demo</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">space</span> <span class="o">=</span> <span class="n">VoxelSpace</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="n">density</span><span class="p">)</span>
+<span class="n">space</span><span class="o">.</span><span class="n">plot_with_density</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ad75efbbd9dfd80e913d1b46cbcd249a00e18ca270f6b797e48c07565faf63d2.png" src="../../_images/ad75efbbd9dfd80e913d1b46cbcd249a00e18ca270f6b797e48c07565faf63d2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">space</span><span class="o">.</span><span class="n">compute_rg</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.486832051163836
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rg-standard-deviation-equivalence">
+<h2><span class="section-number">5.2.3. </span>Rg - Standard Deviation Equivalence<a class="headerlink" href="#rg-standard-deviation-equivalence" title="Link to this heading">#</a></h2>
+<p>It might be helpful to be aware of the following equivalence:</p>
+<p>The radius of gyration (<span class="math notranslate nohighlight">\(R_g\)</span>) is mathematically the square root of the second central moment (variance) of the mass (or density) distribution about its center of mass.
+In other words, <span class="math notranslate nohighlight">\(R_g^2\)</span> is the weighted average squared distance from the center of mass, which is exactly the second central moment.
+Or more shortly, <span class="math notranslate nohighlight">\(R_g\)</span> is the standard deviation of the mass (or density) distribution.</p>
 </section>
 <section id="guinier-plot">
-<h2><span class="section-number">5.2.3. </span>Guinier Plot<a class="headerlink" href="#guinier-plot" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2.4. </span>Guinier Plot<a class="headerlink" href="#guinier-plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -574,7 +647,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partilce-size-and-scattering-curve">5.2.1. Partilce Size and Scattering Curve</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rg-radius-of-gyration">5.2.2. Rg ― Radius of Gyration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guinier-plot">5.2.3. Guinier Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rg-standard-deviation-equivalence">5.2.3. Rg - Standard Deviation Equivalence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guinier-plot">5.2.4. Guinier Plot</a></li>
 </ul>
   </nav></div>
 
