@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -212,22 +212,28 @@
 <li class="toctree-l2"><a class="reference internal" href="proportional.html">4.6. Proportional EGH Modeling</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">5. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../50/fourier.html">5.1. Fourier Transform - from Density to Scattering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">5.2. Guinier Approximation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/scattering-factors.html">5.3. Form and Structure Factors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">5.4. Interparticle Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/worsened-errors.html">5.5. Linearly Worsened Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">5.6. Bounded Structure Factorization</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../45/general-key-concepts.html">5. General Key Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../45/moments.html">5.1. Central Moment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../45/radius-of-gyration.html">5.2. Radius of Gyration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../45/characteristic-function.html">5.3. Characteristic Function</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">6. SEC Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../60/plate-theory.html">6.1. Plate Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../60/stochastic-theory.html">6.2. Stochastic Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../60/kinetic-theory.html">6.3. Kinetic Theory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../50/saxs-theory.html">6. SAXS Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../50/fourier.html">6.1. Fourier Transform - from Density to Scattering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/guinier.html">6.2. Guinier Approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/scattering-factors.html">6.3. Form and Structure Factors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/interparticle.html">6.4. Interparticle Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/worsened-errors.html">6.5. Linearly Worsened Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../50/bounded-lrf.html">6.6. Bounded Structure Factorization</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../90/references.html">7. References</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../60/sec-theory.html">7. SEC Theory Basics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../60/plate-theory.html">7.1. Plate Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../60/stochastic-theory.html">7.2. Stochastic Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../60/kinetic-theory.html">7.3. Kinetic Theory</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../90/references.html">8. References</a></li>
 </ul>
 
     </div>
@@ -413,11 +419,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 204/204 [00:02&lt;00:00, 70.45it/s] 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 203/203 [00:47&lt;00:00,  4.32it/s]
 developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
 </pre></div>
 </div>
-<img alt="../../_images/ac31e480841638235258c72ab04ae121ce3ad34df6975bbfb067f7771197dd21.png" src="../../_images/ac31e480841638235258c72ab04ae121ce3ad34df6975bbfb067f7771197dd21.png" />
+<img alt="../../_images/93e2a0f11f157a80b7fe81d96b175b5dc7c269d143ff51c5e2b73e5039197efe.png" src="../../_images/93e2a0f11f157a80b7fe81d96b175b5dc7c269d143ff51c5e2b73e5039197efe.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -431,7 +437,7 @@ developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&qu
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
 </pre></div>
 </div>
-<img alt="../../_images/4f6a4c98b69561b79a27b5e669516387cdb344bdca578b6d957663d3a02ce8a4.png" src="../../_images/4f6a4c98b69561b79a27b5e669516387cdb344bdca578b6d957663d3a02ce8a4.png" />
+<img alt="../../_images/1b322e987f1982742c73ba3e73afe0c5d7fed6a792c439ef9a3431b31394fb47.png" src="../../_images/1b322e987f1982742c73ba3e73afe0c5d7fed6a792c439ef9a3431b31394fb47.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -443,13 +449,9 @@ developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&qu
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-SimpleGuinier aborted due to 0 &lt;= 32
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make_guinier_plot: Error processing component 2: &#39;SimpleGuinier&#39; object has no attribute &#39;guinier_start&#39;
-</pre></div>
-</div>
-<img alt="../../_images/de2876a259cef7d21dd281b0c4928edd62474e2f7e9017197659596a965c32c8.png" src="../../_images/de2876a259cef7d21dd281b0c4928edd62474e2f7e9017197659596a965c32c8.png" />
+<img alt="../../_images/aba24232cc8f8c1d7f6543e743ca79898698b75b56bc94c210b1513da4922005.png" src="../../_images/aba24232cc8f8c1d7f6543e743ca79898698b75b56bc94c210b1513da4922005.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -463,7 +465,7 @@ SimpleGuinier aborted due to 0 &lt;= 32
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
 </pre></div>
 </div>
-<img alt="../../_images/3c06ebeabf18f5ab6e09123cef82d0cb13ca20be949cdd53916eb61420348e5b.png" src="../../_images/3c06ebeabf18f5ab6e09123cef82d0cb13ca20be949cdd53916eb61420348e5b.png" />
+<img alt="../../_images/d7038eb6b604f11b7b25508fbca4098d429cc53f457208b4ad334d1891c55f33.png" src="../../_images/d7038eb6b604f11b7b25508fbca4098d429cc53f457208b4ad334d1891c55f33.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -474,14 +476,16 @@ SimpleGuinier aborted due to 0 &lt;= 32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E:\GitHub\molass-library\molass\LowRank\CurveDecomposer.py:194: OptimizeWarning: Initial guess is not within the specified bounds
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Github\molass-library\molass\LowRank\CurveDecomposer.py:194: OptimizeWarning: Initial guess is not within the specified bounds
   res = minimize(fit_objective, init_params, method=&#39;Nelder-Mead&#39;, bounds=bounds)
 developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-E:\GitHub\molass-library\molass\PlotUtils\DecompositionPlot.py:88: RuntimeWarning: invalid value encountered in log
-  logy = np.log(pv[slice_])
+SimpleGuinier aborted due to 0 &lt;= 32
 </pre></div>
 </div>
-<img alt="../../_images/b2a09c953dbcd53ccdfe326584ee47e2e04b894424a3bc34687be51f74615377.png" src="../../_images/b2a09c953dbcd53ccdfe326584ee47e2e04b894424a3bc34687be51f74615377.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>make_guinier_plot: Error processing component 2: &#39;SimpleGuinier&#39; object has no attribute &#39;guinier_start&#39;
+</pre></div>
+</div>
+<img alt="../../_images/c8b52ef9cd8e72de80c99b13badc176b8e66c88f2dfd768d515f21ed08ffea9d.png" src="../../_images/c8b52ef9cd8e72de80c99b13badc176b8e66c88f2dfd768d515f21ed08ffea9d.png" />
 </div>
 </div>
 <div class="cell docutils container">
