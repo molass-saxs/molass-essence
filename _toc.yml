@@ -56,6 +56,15 @@ chapters:
     title: Underdeterminedness of EGH Modeling
   - file: chapters/40/proportional
     title: Proportional EGH Modeling
+- file: chapters/45/general-key-concepts
+  title: General Key Concepts
+  sections:
+  - file: chapters/45/moments
+    title: Central Moment
+  - file: chapters/45/radius-of-gyration
+    title: Radius of Gyration
+  - file: chapters/45/characteristic-function
+    title: Characteristic Function
 - file: chapters/50/saxs-theory
   title: SAXS Theory Basics
   sections:
