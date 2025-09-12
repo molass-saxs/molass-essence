@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/60/kinetic-theory';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -397,7 +399,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-theory">7.3.1. Rate Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-theory-models">7.3.1. Rate Theory Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-dispersive-model">7.3.2. Equilibrium Dispersive Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdm-lkm-equivalence">7.3.3. SDM-LKM Equivalence</a></li>
 </ul>
@@ -413,25 +415,70 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kinetic-theory">
 <h1><span class="section-number">7.3. </span>Kinetic Theory<a class="headerlink" href="#kinetic-theory" title="Link to this heading">#</a></h1>
-<section id="rate-theory">
-<h2><span class="section-number">7.3.1. </span>Rate Theory<a class="headerlink" href="#rate-theory" title="Link to this heading">#</a></h2>
+<section id="rate-theory-models">
+<h2><span class="section-number">7.3.1. </span>Rate Theory Models<a class="headerlink" href="#rate-theory-models" title="Link to this heading">#</a></h2>
+<p>In contrast to the stochastic models, there are models derived from the following differential equation known as the <code class="docutils literal notranslate"><span class="pre">transport-dispersive</span> <span class="pre">equation</span></code> (or the <code class="docutils literal notranslate"><span class="pre">convection-diffusion</span> <span class="pre">equation</span></code>).</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial C}{\partial t} + u \frac{\partial C}{\partial x} = D \frac{\partial^2 C}{\partial x^2} - k(C - C^*) \]</div>
+<p>where:</p>
 <ul class="simple">
-<li><p>General Rate Model</p></li>
-<li><p>Lumped Kinetic Model</p></li>
-<li><p>Equilirium Dispersive Model</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> is the solute concentration in the mobile phase,</p></li>
+<li><p><span class="math notranslate nohighlight">\(C^*\)</span> is the concentration in the stationary phase,</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> is the linear velocity of the mobile phase,</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> is the axial dispersion coefficient,</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is the rate constant for exchange between phases,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is the position along the column,</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is time.</p></li>
 </ul>
+<p>These models are often classified into the following three according to the levels of simplification.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Mass Transfer Kinetics</p></th>
+<th class="head"><p>Axial Dispersion</p></th>
+<th class="head"><p>Phase Equilibrium</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GRM</p></td>
+<td><p>Explicit, detailed</p></td>
+<td><p>Yes</p></td>
+<td><p>Non-instantaneous</p></td>
+</tr>
+<tr class="row-odd"><td><p>LKM</p></td>
+<td><p>Lumped, simplified</p></td>
+<td><p>Yes</p></td>
+<td><p>Non-instantaneous</p></td>
+</tr>
+<tr class="row-even"><td><p>EDM</p></td>
+<td><p>Neglected (instantaneous)</p></td>
+<td><p>Yes</p></td>
+<td><p>Instantaneous</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Simply in set inclusion notation:</p>
+<div class="math notranslate nohighlight">
+\[  GRM \supseteq LKM \supseteq EDM \]</div>
 </section>
 <section id="equilibrium-dispersive-model">
 <h2><span class="section-number">7.3.2. </span>Equilibrium Dispersive Model<a class="headerlink" href="#equilibrium-dispersive-model" title="Link to this heading">#</a></h2>
-<p><span id="id1">[<a class="reference internal" href="../90/references.html#id19" title="Jamil Ur Rehman, Adeel Muneer, and Shamsul Qamar. Analysis of equilibrium dispersive model of liquid chromatography considering a quadratic-type adsorption isotherm. Thermal Science, 26(3):2069-2080, May 2021. URL: https://doi.org/10.2298/TSCI201229179U.">URMQ21</a>]</span></p>
+<p>Rate theory models are usually computed numerically because the differential equation can be solved analytically only in special cases. However, for EDM, <span id="id1">[<a class="reference internal" href="../90/references.html#id20" title="Jamil Ur Rehman, Adeel Muneer, and Shamsul Qamar. Analysis of equilibrium dispersive model of liquid chromatography considering a quadratic-type adsorption isotherm. Thermal Science, 26(3):2069-2080, May 2021. URL: https://doi.org/10.2298/TSCI201229179U.">URMQ21</a>]</span> solved it analytically under applicable conditions, which we use as an additional constraint to improve the decomposition.</p>
 </section>
 <section id="sdm-lkm-equivalence">
 <h2><span class="section-number">7.3.3. </span>SDM-LKM Equivalence<a class="headerlink" href="#sdm-lkm-equivalence" title="Link to this heading">#</a></h2>
-<p>SDM ≈ LKM ⊃ EDM</p>
-<figure class="align-default" id="id2">
+<p>With regard to the relation to the stochastic models, there is a notable paper <span id="id2">[<a class="reference internal" href="../90/references.html#id18" title="Attila Felinger, Alberto Cavazzini, and Francesco Dondi. Equivalence of the microscopic and macroscopic models of chromatography: stochastic–dispersive versus lumped kinetic model. Journal of Chromatography A, 1043(2):149-157, 2004. URL: https://www.sciencedirect.com/science/article/pii/S0021967304008647, doi:https://doi.org/10.1016/j.chroma.2004.05.081.">FCD04</a>]</span> which suggests:</p>
+<div class="math notranslate nohighlight">
+\[ SDM \sim LKM \supseteq EDM \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This equivalence, in our application, is under investigation.</p>
+</div>
+<figure class="align-default" id="id3">
 <img alt="../../_images/sdm-lkm-equivalence.jpg" src="../../_images/sdm-lkm-equivalence.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">SDM-LKM Equivalence</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">SDM-LKM Equivalence</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -501,7 +548,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-theory">7.3.1. Rate Theory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-theory-models">7.3.1. Rate Theory Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-dispersive-model">7.3.2. Equilibrium Dispersive Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdm-lkm-equivalence">7.3.3. SDM-LKM Equivalence</a></li>
 </ul>
