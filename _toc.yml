@@ -89,5 +89,7 @@ chapters:
     title: Stochastic Theory
   - file: chapters/60/kinetic-theory
     title: Kinetic Theory
+  - file: chapters/60/sdm-lkm-equivalence
+    title: SDM-LKM Equivalence
 - file: chapters/90/references
   title: References
