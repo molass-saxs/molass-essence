@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -401,7 +401,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-note">6.3.1. General Note</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-for-sec-saxs-liquid-context">6.3.2. Definition for SEC-SAXS Liquid Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-for-sec-saxs-solution-context">6.3.2. Definition for SEC-SAXS Solution Context</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#form-factor">6.3.3. Form Factor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-factor">6.3.4. Structure Factor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#form-factor-models">6.3.5. Form Factor Models</a><ul class="nav section-nav flex-column">
@@ -425,46 +425,18 @@ document.write(`
 <h1><span class="section-number">6.3. </span>Form and Structure Factors<a class="headerlink" href="#form-and-structure-factors" title="Link to this heading">#</a></h1>
 <section id="general-note">
 <h2><span class="section-number">6.3.1. </span>General Note<a class="headerlink" href="#general-note" title="Link to this heading">#</a></h2>
-<p>The terms “form factor” and “structure factor” are used broadly in scattering theory, but their specific meanings can vary depending on the system—crystals, polymers, liquids, colloids, etc. The scale of the “scattering unit” changes with the system under study.
-To avoid confusion from this variation, the following table distinguishes how these terms are used for different types of matter.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>System/Context</p></th>
-<th class="head"><p>Scattering Unit</p></th>
-<th class="head"><p>Form Factor Describes</p></th>
-<th class="head"><p>Structure Factor Describes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Crystal</p></td>
-<td><p>Atom</p></td>
-<td><p>Scattering by a single atom</p></td>
-<td><p>Arrangement of atoms in the lattice</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polymer</p></td>
-<td><p>Monomer/Polymer chain</p></td>
-<td><p>Scattering by a monomer or chain</p></td>
-<td><p>Arrangement/correlation of chains</p></td>
-</tr>
-<tr class="row-even"><td><p>Colloid/Solution</p></td>
-<td><p>Particle (e.g., sphere, protein)</p></td>
-<td><p>Scattering by a single particle</p></td>
-<td><p>Spatial correlations between particles</p></td>
-</tr>
-<tr class="row-odd"><td><p>Liquid</p></td>
-<td><p>Molecule</p></td>
-<td><p>Scattering by a molecule</p></td>
-<td><p>Short-range order between molecules</p></td>
-</tr>
-</tbody>
-</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is planned.</p>
 </div>
-<p><strong>Note:</strong><br />
-“Scattering unit” is a general term that refers to the basic entity responsible for scattering in the system—this could be an atom, molecule, polymer, or colloidal particle, depending on the context.</p>
-<p>For our SEC-SAXS experiments, we assume a liquid system. Please keep this in mind for the following discussion.</p>
+<p>References:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://journals.iucr.org/paper?S0021889808004937">Simultaneous estimation of the form factor and structure factor for globular particles in small-angle scattering</a></p></li>
+<li><p><a class="reference external" href="https://pubs.acs.org/doi/pdf/10.1021/jacsau.2c00697?ref=article_openPDF">Computational Reverse-Engineering Analysis for Scattering Experiments for Form Factor and Structure Factor Determination (“P(q) and S(q) CREASE”)</a></p></li>
+</ul>
 </section>
-<section id="definition-for-sec-saxs-liquid-context">
-<h2><span class="section-number">6.3.2. </span>Definition for SEC-SAXS Liquid Context<a class="headerlink" href="#definition-for-sec-saxs-liquid-context" title="Link to this heading">#</a></h2>
+<section id="definition-for-sec-saxs-solution-context">
+<h2><span class="section-number">6.3.2. </span>Definition for SEC-SAXS Solution Context<a class="headerlink" href="#definition-for-sec-saxs-solution-context" title="Link to this heading">#</a></h2>
 <p>For the discussion in the following chapters, the definitions of form factor and structure factor are presented here. According to <span id="id1">[<a class="reference internal" href="../90/references.html#id36" title="Cedric J. Gommes, Sebastian Jaksch, and Henrich Frielinghaus. Small-angle scattering for beginners. Journal of Applied Crystallography, 54(6):1832–1843, Dec 2021. URL: https://doi.org/10.1107/S1600576721010293, doi:10.1107/S1600576721010293.">GJF21</a>]</span>, these two factors are pedagogically distinguished as follows:</p>
 <ul class="simple">
 <li><p>form factor — scattering by individual particles</p></li>
@@ -673,7 +645,7 @@ To avoid confusion from this variation, the following table distinguishes how th
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-note">6.3.1. General Note</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-for-sec-saxs-liquid-context">6.3.2. Definition for SEC-SAXS Liquid Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-for-sec-saxs-solution-context">6.3.2. Definition for SEC-SAXS Solution Context</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#form-factor">6.3.3. Form Factor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-factor">6.3.4. Structure Factor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#form-factor-models">6.3.5. Form Factor Models</a><ul class="nav section-nav flex-column">
