@@ -4,6 +4,6 @@ We first introduce some simple models below just for illustration purposes. The 
 
 * Gaussian Curve - for symmetric elution curves
 * Exponential-Gaussian Hybrid - for asymmetric elution curves
-* Sphere Scattering - for scattering curves
+* Spherical Particle Scattering - for scattering curves
 
 Theoretical discussion will be duly given in later chapters.
