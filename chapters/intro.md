@@ -6,7 +6,7 @@ This document describes the theoretical essence of the library, meaning that we 
 
 You can read the chapters of the left sidebar in order. Otherwise, glance over the contents or use the search box to find what you are interested in.
 
-See also as you proceed:
+As you proceed, you may also find the following resources helpful:
 
 * [Molass Library Tutorial](https://nshimizu0721.github.io/molass-tutorial/) on how to use for begginners,
 * [Molass Technical Report](https://freesemt.github.io/molass-technical/) on techincal details for developpers,
