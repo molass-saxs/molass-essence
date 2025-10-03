@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -377,7 +377,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +395,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-among-dsm-lkm-and-edm">7.4.1. Relation among DSM, LKM and EDM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-correspondence-in-relevant-papers">7.4.2. Notation Correspondence in Relevant Papers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-examples-to-understand-the-papers">7.4.3. SymPy Examples to Understand the Papers</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -404,6 +416,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sdm-lkm-equivalence">
 <h1><span class="section-number">7.4. </span>SDM-LKM Equivalence<a class="headerlink" href="#sdm-lkm-equivalence" title="Link to this heading">#</a></h1>
+<section id="relation-among-dsm-lkm-and-edm">
+<h2><span class="section-number">7.4.1. </span>Relation among DSM, LKM and EDM<a class="headerlink" href="#relation-among-dsm-lkm-and-edm" title="Link to this heading">#</a></h2>
 <p>With regard to the relation to the stochastic models, there is a notable paper <span id="id1">[<a class="reference internal" href="../90/references.html#id18" title="Attila Felinger, Alberto Cavazzini, and Francesco Dondi. Equivalence of the microscopic and macroscopic models of chromatography: stochastic–dispersive versus lumped kinetic model. Journal of Chromatography A, 1043(2):149-157, 2004. URL: https://www.sciencedirect.com/science/article/pii/S0021967304008647, doi:https://doi.org/10.1016/j.chroma.2004.05.081.">FCD04</a>]</span> which suggests:</p>
 <div class="math notranslate nohighlight">
 \[ SDM \sim LKM \supseteq EDM \]</div>
@@ -417,6 +431,52 @@ document.write(`
 <p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">SDM-LKM Equivalence</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="notation-correspondence-in-relevant-papers">
+<h2><span class="section-number">7.4.2. </span>Notation Correspondence in Relevant Papers<a class="headerlink" href="#notation-correspondence-in-relevant-papers" title="Link to this heading">#</a></h2>
+<p>Here are summarized notational correspondence among the relevant papers:</p>
+<ul class="simple">
+<li><p>Dondi, 2002 <span id="id3">[<a class="reference internal" href="../90/references.html#id19" title="Francesco Dondi, Alberto Cavazzini, Maurizio Remelli, Attila Felinger, and Michel Martin. Stochastic theory of size exclusion chromatography by the characteristic function approach. Journal of Chromatography A, 943(2):185-207, 2002. URL: https://www.sciencedirect.com/science/article/pii/S0021967301014431, doi:https://doi.org/10.1016/S0021-9673(01)01443-1.">DCR+02</a>]</span></p></li>
+<li><p>Felinger, 2004 <span id="id4">[<a class="reference internal" href="../90/references.html#id18" title="Attila Felinger, Alberto Cavazzini, and Francesco Dondi. Equivalence of the microscopic and macroscopic models of chromatography: stochastic–dispersive versus lumped kinetic model. Journal of Chromatography A, 1043(2):149-157, 2004. URL: https://www.sciencedirect.com/science/article/pii/S0021967304008647, doi:https://doi.org/10.1016/j.chroma.2004.05.081.">FCD04</a>]</span></p></li>
+<li><p>Rheman, 2021 <span id="id5">[<a class="reference internal" href="../90/references.html#id20" title="Jamil Ur Rehman, Adeel Muneer, and Shamsul Qamar. Analysis of equilibrium dispersive model of liquid chromatography considering a quadratic-type adsorption isotherm. Thermal Science, 26(3):2069-2080, May 2021. URL: https://doi.org/10.2298/TSCI201229179U.">URMQ21</a>]</span></p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table" id="param-correspondence-table">
+<caption><span class="caption-number">Table 7.3 </span><span class="caption-text">Summary of Notational Correspondence between SDM and { LKM <span class="math notranslate nohighlight">\(\supseteq\)</span> EDM }</span><a class="headerlink" href="#param-correspondence-table" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Dondi-2002 SDM</p></th>
+<th class="head"><p>Felinger-2004 LKM</p></th>
+<th class="head"><p>Rehman-2021 EDM</p></th>
+<th class="head"><p>Parameter Despription</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( N_0 \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( N_d = \frac{Lu}{2D} \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( \frac{Lu}{2D_z} \)</span></p></td>
+<td><p>Number of Plates in Mobile Zone; <span class="math notranslate nohighlight">\( N_0 = N_d = (\frac{t_0}{\sigma_0})^2 \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( n_i \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( N_m \)</span></p></td>
+<td></td>
+<td><p>Average Number of Stays in Stagnant Zone; <span class="math notranslate nohighlight">\(N_m=F k_a t_0 = k' k_d t_0 \)</span>; <span class="math notranslate nohighlight">\( k' = \frac{F k_a}{k_d} \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( \tau_i \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{k_d} \)</span></p></td>
+<td></td>
+<td><p>Average Time of Stays in Stagnant Zone; <span class="math notranslate nohighlight">\( \frac{1}{k_d} = \frac{k' t_0}{N_m} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( K_{SEC} \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( e \)</span> (porosity)</p></td>
+<td><p><span class="math notranslate nohighlight">\( e \)</span> (porosity)</p></td>
+<td><p><span class="math notranslate nohighlight">\( \rho = \min(1, \frac{R_g}{R_p}) \)</span> ; <span class="math notranslate nohighlight">\( K_{SEC} = (1 - \rho)^m \)</span> ; <span class="math notranslate nohighlight">\( (K_{SEC})^{\frac{1}{m}} = 1 - \rho \)</span> ; <span class="math notranslate nohighlight">\( R_g \sim R_p(1 - porosity^{\frac{1}{m}}) \)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sympy-examples-to-understand-the-papers">
+<h2><span class="section-number">7.4.3. </span>SymPy Examples to Understand the Papers<a class="headerlink" href="#sympy-examples-to-understand-the-papers" title="Link to this heading">#</a></h2>
+<p>To follow the papers, you can use <a class="reference external" href="https://www.sympy.org/en/index.html">SymPy</a>. Here are some examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">dsolve</span>
@@ -515,6 +575,7 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -570,6 +631,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-among-dsm-lkm-and-edm">7.4.1. Relation among DSM, LKM and EDM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-correspondence-in-relevant-papers">7.4.2. Notation Correspondence in Relevant Papers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy-examples-to-understand-the-papers">7.4.3. SymPy Examples to Understand the Papers</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
