@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -414,7 +414,7 @@ document.write(`
 <span class="n">Rg</span> <span class="o">=</span> <span class="mi">35</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">Rg</span>
 
-<span class="n">I</span> <span class="o">=</span> <span class="n">homogeneous_sphere</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">homogeneous_sphere</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;homogeneous sphere&#39;</span><span class="p">)</span>
@@ -422,16 +422,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1743e2de780&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x18269caa720&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/9fafc9a0a1df3f8b6bdc5dafebbbf71a1009d8797e45403f83e609dfcc03af6c.png" src="../../_images/9fafc9a0a1df3f8b6bdc5dafebbbf71a1009d8797e45403f83e609dfcc03af6c.png" />
+<img alt="../../_images/7490afe939599aab56eb94a63edb65f0938c37a5fc74eeab251f6eec067470a3.png" src="../../_images/7490afe939599aab56eb94a63edb65f0938c37a5fc74eeab251f6eec067470a3.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.SAXS.Theory.DjKinning1984</span> <span class="kn">import</span> <span class="n">S0</span>
-<span class="n">I1</span> <span class="o">=</span> <span class="n">homogeneous_sphere</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> 
+<span class="n">I1</span> <span class="o">=</span> <span class="n">homogeneous_sphere</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
 <span class="n">I2</span> <span class="o">=</span> <span class="n">I1</span> <span class="o">*</span> <span class="n">S0</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -443,10 +443,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17440509f40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18269cf7e30&gt;
 </pre></div>
 </div>
-<img alt="../../_images/34fa4eaa6a4b74e8ae4daba898f4fe6a3f15e89bbc78eac171282ffe4ff767e8.png" src="../../_images/34fa4eaa6a4b74e8ae4daba898f4fe6a3f15e89bbc78eac171282ffe4ff767e8.png" />
+<img alt="../../_images/cb2146b339fc3f014be84a1d0a85d76a2fc1360bb427410bfebf8cf36131f627.png" src="../../_images/cb2146b339fc3f014be84a1d0a85d76a2fc1360bb427410bfebf8cf36131f627.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -524,7 +524,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c8acee017d70dda21f798d28a6d42857ca52861cccaecdfd83fcd060726d3819.png" src="../../_images/c8acee017d70dda21f798d28a6d42857ca52861cccaecdfd83fcd060726d3819.png" />
+<img alt="../../_images/05d1c2bf9ab798670ea390012197864841c745009473f537c94ffea820eb0f63.png" src="../../_images/05d1c2bf9ab798670ea390012197864841c745009473f537c94ffea820eb0f63.png" />
 </div>
 </div>
 <div class="cell docutils container">
